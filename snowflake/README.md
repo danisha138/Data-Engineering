@@ -1,4 +1,4 @@
-# DataWarehousing #Snowflake
+# DataWarehousing # Snowflake
 
 # In this Directory you will have all the documentations part related to Snowflake
 
