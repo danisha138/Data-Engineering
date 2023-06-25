@@ -11,7 +11,9 @@ and we must use the qualified name to refer it, e.g. SELECT * FROM global_temp.v
 
 
 `Create or replace view will be stored in metadata and its available for all sessions and all users and all clusters.`
+
 `create or replace temporary view will be available in only current session.`
+
 `create or replace global temporary view will be available in other sessions`
 
 
