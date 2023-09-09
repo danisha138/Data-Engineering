@@ -9,4 +9,13 @@ But it can be turned off at a session level, user level or at the account level.
 
 Using the USE_CACHED_RESULT parameter.
 
-ALTER SESSION SET USE_CACHED_RESULT=FALSE
+ALTER SESSION SET USE_CACHED_RESULT=FALSE;
+
+Note-
+Snowflake keeps the Query Result Cache for 24 hrs , if within 24hrs same queru is not executed it purged the Query Result Cache
+
+
+
+
+
+
