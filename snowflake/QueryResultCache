@@ -1,0 +1,12 @@
+Query Result Cache
+
+1. When a query is executed ,  Snowflake cashes the query results for a period.
+2. Snowflake uses the query results cache to avoid re-executing queries when there are no data changes.
+
+Query Result Cache is enabled by default.
+
+But it can be turned off at a session level, user level or at the account level.
+
+Using the USE_CACHED_RESULT parameter.
+
+ALTER SESSION SET USE_CACHED_RESULT=FALSE
