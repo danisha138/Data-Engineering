@@ -9,3 +9,30 @@ The privileges to use a stage can be granted or revoked from roles. In addition,
 If you plan to stage data files that will be loaded only by you, or will be loaded only into a single table,
 then you may prefer to simply use either your user stage or the stage for the table into which you will be loading data.
 Named stages are optional but recommended when you plan regular data loads that could involve multiple users and/or table
+
+
+USE DATABASE dev_lnd;
+USE SCHEMA public;
+ 
+CREATE TABLE LU_Airport
+(
+Airline_ID Number,
+Airline_Description String
+); 
+
+
+CREATE OR REPLACE STAGE LU_Airport_CSV_Stage
+  FILE_FORMAT = (TYPE = csv FIELD_DELIMITER = ',' FIELD_OPTIONALLY_ENCLOSED_BY = '"' SKIP_HEADER = 1);
+
+USE DATABASE dev_lnd;
+PUT 'file:///<PATH>/L_AIRPORT_ID.csv' @LU_Airport_CSV_Stage;
+
+LIST @LU_Airport_CSV_Stage
+
+USE DATABASE dev_lnd;
+COPY INTO LU_Airport
+  FROM @LU_Airport_CSV_Stage;
+
+SELECT * FROM LU_Airport;
+
+REMOVE @LU_Airport_CSV_Stage;
