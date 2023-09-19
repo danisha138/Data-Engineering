@@ -1,0 +1,11 @@
+Named Stages
+Named stages are database objects that provide the greatest degree of flexibility for data loading:
+
+Users with the appropriate privileges on the stage can load data into any table.
+
+Because the stage is a database object, the security/access rules that apply to all objects apply. 
+The privileges to use a stage can be granted or revoked from roles. In addition, ownership of the stage can be transferred to another role.
+
+If you plan to stage data files that will be loaded only by you, or will be loaded only into a single table,
+then you may prefer to simply use either your user stage or the stage for the table into which you will be loading data.
+Named stages are optional but recommended when you plan regular data loads that could involve multiple users and/or table
