@@ -67,4 +67,3 @@ COPY INTO Flight_Details
 
 select * from Flight_Details;
 
-SELECT system$GET_NPS_FEEDBACK_TIMESTAMP(), system$GET_NPS_DISMISS_TIMESTAMP();
