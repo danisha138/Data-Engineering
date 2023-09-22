@@ -11,8 +11,11 @@ CREATE OR REPLACE FILE FORMAT my_csv_format
   EMPTY_FIELD_AS_NULL = true
   COMPRESSION = gzip;
 
+  
+
 USE DATABASE testdb;
 SHOW FILE FORMATS;
+
 
 SHOW FILE FORMATS IN DATABASE testdb;
 
@@ -32,6 +35,8 @@ CREATE STAGE my_s3_stage
   STORAGE_INTEGRATION = s3_int
   URL = 's3://mybucket/encrypted_files/'
   FILE_FORMAT = my_csv_format;
+
+
 
 CREATE OR REPLACE STAGE flights_stage
  url='s3://ca-flight-data-daily/2020/06/01/'
