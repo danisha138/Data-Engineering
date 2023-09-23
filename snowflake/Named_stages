@@ -1,4 +1,9 @@
 Named Stages
+
+A named internal stage is a database objects that can be created, modified and dropped.
+Compared to a table or a user stage they are more flexible.
+They can be shared and can be used to load multiple files and multiple tables.
+
 Named stages are database objects that provide the greatest degree of flexibility for data loading:
 
 Users with the appropriate privileges on the stage can load data into any table.
