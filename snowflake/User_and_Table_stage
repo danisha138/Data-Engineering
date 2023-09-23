@@ -1,3 +1,8 @@
+Snowfalke Supports 3 type of internal stages-
+1.User
+2.Table
+3.Named
+
 A user stage can't be created or dropped. 
 They are automatically created and available for a user lifetime. 
 They can be referenced using @~syntax.
