@@ -1,0 +1,14 @@
+A user stage can't be created or dropped. 
+They are automatically created and available for a user lifetime. 
+They can be referenced using @~syntax.
+User stages don't support file format options. The COPY command must 
+include these arguments.
+
+
+
+A table stage can't be created or dropped. 
+They are automatically created and available for a table's lifetime.
+Multiple users can assess table stage but it can only load data into one table.
+They share the table's name and can be referenced using @%tablename syntax.
+Table stages don't support file format options. The COPY command must include these arguments.
+Table stages don't allow data transformations while loading the data.
