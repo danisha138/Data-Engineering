@@ -1,0 +1,15 @@
+Snowflake stores metadata about the rows in each micro-partition
+
+• Range of values for each column
+• Number of distinct values
+• Other properties allowing query optimization
+
+
+Advantages of Micro-partitions:
+Automated partitioning - no user involvement in creating and managing partitions
+
+Small size allows for efficient query pruning
+
+Columnar storage within partitions, only columns referenced by a query are scanned
+
+Data stored in an efficient, compressed format
