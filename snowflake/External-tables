@@ -1,0 +1,15 @@
+External Tables
+
+*External tables allow you to create tables on data stored external to Snowflake
+1.Definition in Snowflake metadata
+2.Data in external location
+
+• External table functionality lets you query an external table like a regular table Join with other tables
+
+• Create views on top of external tables
+
+• External tables are read-only since they point to external storage. 。 DML operations cannot be performed on them.
+
+• External table data does not contribute to Snowflake storage costs
+
+the compute cost is charged when queries are executed
