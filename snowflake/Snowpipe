@@ -1,1 +1,6 @@
-Snowflake allows continuous data loading using Snowpipe, a serverless service. Snowpipe enables you to load data in a micro-batch manner, loading small volumes of data on each execution. The micro-batch-based data loading is used when a continuous stream of data, such as transactions or events, must be loaded and made available to enterprises quickly. Snowpipe enables continuous data loading and can load data within a few minutes after it arrives in a stage. Snowpipe is serverless and has its own computational capability; therefore, it does not rely on virtual warehouses for processing. Snowf
+Snowflake allows continuous data loading using Snowpipe, a serverless service.
+Snowpipe enables you to load data in a micro-batch manner, loading small volumes of data on each execution. 
+The micro-batch-based data loading is used when a continuous stream of data, such as transactions or events, 
+must be loaded and made available to enterprises quickly. 
+Snowpipe enables continuous data loading and can load data within a few minutes after it arrives in a stage. 
+Snowpipe is serverless and has its own computational capability; therefore, it does not rely on virtual warehouses for processing.
