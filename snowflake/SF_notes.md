@@ -22,3 +22,6 @@ Snowflake Zero Copy Cloning:
 
 
 The COPY command allows unloading or exporting data from a table or a view and also allows using queries (SELECT) to unload data.
+
+The COPY command can load data using a SELECT query. 
+Yes
