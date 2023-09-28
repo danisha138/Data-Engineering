@@ -1,5 +1,10 @@
-Q1.Does snowflake enforce primary key?
+Q1. Does snowflake enforce primary key?
 
 Ans- The primary key for a foreign key can be on a different table or the same table as the foreign key. 
 Snowflake supports defining and maintaining constraints, but does not enforce them, 
 except for NOT NULL constraints,which are always enforced.
+
+
+Q2. Does Snowflake support indexes?
+Ans- Snowflake does not support indexes, though it does support "clustering" for performance improvements of I/O.
+
