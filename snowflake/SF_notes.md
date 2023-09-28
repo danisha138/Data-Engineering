@@ -19,3 +19,6 @@ Snowflake Zero Copy Cloning:
 • Zero Copy Cloning in Snowflake allows quick and easy copying of tables, schemas, or databases.
 • The copy shares the same storage, saving storage costs.
 • Cloned and original objects are independent, ensuring changes to one don't affect the other.
+
+
+The COPY command allows unloading or exporting data from a table or a view and also allows using queries (SELECT) to unload data.
