@@ -8,3 +8,9 @@ except for NOT NULL constraints,which are always enforced.
 Q2. Does Snowflake support indexes?
 Ans- Snowflake does not support indexes, though it does support "clustering" for performance improvements of I/O.
 
+
+
+Q3. Does data in external stage count towards your Snowflake storage?
+Ans-
+No. External stages point to external cloud storage locations. Data in those external locations are managed and maintained independently and is managed by the respective cloud provider. An external stage only refers to an external location and doesn't physically hold any data.
+
