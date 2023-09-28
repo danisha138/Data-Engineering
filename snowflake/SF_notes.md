@@ -25,3 +25,5 @@ The COPY command allows unloading or exporting data from a table or a view and a
 
 The COPY command can load data using a SELECT query. 
 Yes
+
+COPY command uses virtual warehouse resources. Snowpipe is billed separately and does not use virtual warehouse resources. Snowpipe is serverless and has its own computational capability; therefore, it does not rely on virtual warehouses for processing. Snowflake automatically manages the compute required by a Snowpipe. Snowflake also manages the scaling up and down of a Snowpipe as per the data load requirement. Since a Snowpipe is serverless, its costs are charged separately from virtual warehousing fees.
