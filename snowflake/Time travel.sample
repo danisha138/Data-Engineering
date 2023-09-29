@@ -1,0 +1,10 @@
+
+select current_timestamp: --2023-09-28 22:48:40.209 -0700
+
+select * from store before(TIMESTAMP => 2023-09-28 22:48:40.209 -0700 :: TIMESTAMP_LTZ):
+
+select * from store aT (TIMESTAMP => 2023-09-28 22:48:40.209 -0700'::TIMESTAMP LTZ):
+
+Time travel data is not available for table STORE. The requested time is either beyond the allowed
+
+select from store before (STATEMENT => 01af4e82-3200-e2b8-0000-00065bdef091'
