@@ -9,7 +9,7 @@ If the query ID references a query over 14 days old, the following error is retu
 
 Error: statement <query_id> not found
 To work around this limitation, use the timestamp for the referenced query.
-
+--------------------------------------------
 
 select current_timestamp: --2023-09-28 22:48:40.209 -0700
 
@@ -20,3 +20,4 @@ select * from store aT (TIMESTAMP => 2023-09-28 22:48:40.209 -0700'::TIMESTAMP L
 Time travel data is not available for table STORE. The requested time is either beyond the allowed
 
 select from store before (STATEMENT => 01af4e82-3200-e2b8-0000-00065bdef091'
+select * from store BEFORE (OFFSET => -600):
