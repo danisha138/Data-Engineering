@@ -1,0 +1,7 @@
+
+If you change the retention period at the account level, all databases, schemas, and tables
+that do not have an explicit retention period automatically inherit the new retention period.
+
+explicit retention settings take precedence over the account-level retention setting. 
+So, if you've already set retention periods for databases and tables,
+those settings will remain in effect, and they won't be changed by updates to the account-level retention period.
