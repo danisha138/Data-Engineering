@@ -1,7 +1,30 @@
-
+Account-level retention:-
 If you change the retention period at the account level, all databases, schemas, and tables
 that do not have an explicit retention period automatically inherit the new retention period.
 
 explicit retention settings take precedence over the account-level retention setting. 
 So, if you've already set retention periods for databases and tables,
 those settings will remain in effect, and they won't be changed by updates to the account-level retention period.
+
+
+To verify time travel at schema and table level use the following commands:
+
+SHOW PARAMETERS like '%DATA_RETENTION_TIME_IN_DAYS%' in table <table_name>;
+
+SHOW PARAMETERS like '%DATA_RETENTION_TIME_IN_DAYS%' in schema <schema_name>;
+
+SHOW PARAMETERS like '%DATA_RETENTION_TIME_IN_DAYS%' in account;
+SHOW PARAMETERS like '%MIN_DATA_RETENTION_TIME_IN_DAYS%' in account;
+
+NOTE::The standard retention period is 1 day (24 hours) and is automatically enabled for all Snowflake accounts
+
++-------------------------------------------+-----+-------------------------------------+
+|                   Type                    | ... | Time Travel Retention Period (Days) |
++-------------------------------------------+-----+-------------------------------------+
+| Temporary                                 |     | 0 or 1 (default is 1)               |
+| Transient                                 |     | 0 or 1 (default is 1)               |
+| Permanent (Standard Edition)              |     | 0 or 1 (default is 1)               |
+| Permanent (Enterprise Edition and higher) |     | 0 to 90 (default is configurable)   |
++-------------------------------------------+-----+-------------------------------------+
+
+
