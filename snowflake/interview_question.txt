@@ -16,3 +16,218 @@ No. External stages point to external cloud storage locations. Data in those ext
 
 Q4. The load metadata for a table expires after how many days?
 Ans 64 days
+
+1. What is Snowflake and what kind of Database it is?
+
+Ans: Snowflake is a cloud based Data Warehouse available as SaaS (Software as a Service), Snowflake enables Data storage And Data analytic solutions.
+
+Snowflake doesn't have their own infrastructure and currently it can be set up on Azure, AWS and GCP.
+
+Snowflake is pure SQL database, it organizes the data into multiple micro partitions that are internally optimized and compressed. It uses a columnar format to store.
+
+2. What are the Advantages of Snowflake over traditional Databases? (or) What are the new features available in Snowflake?
+
+Ans: Lot of new features and Advantages.
+Pay as you use
+No infrastructure maintenance
+Easy Data loading
+Time Travel and Fail Safe
+Zero copy Cloning
+Easy Data Sharing
+Tasks and Streams
+
+
+3. What are stages in Snowflake and write a query to create a Stage.
+Ans: Snowflake Stages are the locations where data files are stored
+There are 2 types of stages in Snowflake.
+
+External Stages: If the data that needs to be loaded into Snowflake is stored in other cloud regions like AWS S3 or Azure or GCP then then we can use External Stages.
+
+CREATE OR REPLACE EXTSTG_AZURE 
+STORAGE INTEGRATION = azst_jana_apr22
+URL = azure://optumstagejana22.blob.core.windows.net/datalakejana 
+FILE_FORMAT = FILE_FORMAT_AZURE
+
+Internal Stages: Stores the Data files internally, we can copy files to Internal stages by
+using PUT command from Snowsql.
+
+
+4. Write the syntax of a Copy command to load a file into snowflake table.
+
+Ans:
+COPY INTO JANA_DB.STAGE_TBLS.STG_EMPL_DTLS 
+FROM @EXT_STG_AZURE
+file_format= (type = csv field_delimiter="," skip_header=1);
+FILES ('empl_dtls1.txt', 'empl_dtls2.txt'); 
+(or) PATTERN. empl_dtls.*";
+
+
+6. Can you use Where clause in Copy command?
+
+Ans: No, we can't use where clause in Copy command.
+
+But We can do some transformations while loading the data by using copy. 
+→ Select only required fields
+→ Can use functions like substring, cast etc.
+→ Can use Case statement;
+
+7. How can you load a json file to Snowflake? (or) how can you process and load semi-structured data?
+
+Ans: We can store this semi-structure data into a table by using a data type called 'Variant'.
+Then we can read this data from Variant, we can process it into rows and columns and load it into another table.
+
+CREATE OR REPLACE TABLE JANA_DB.STAGE_TBLS.PETS_DATA_JSON_RAW (raw_file variant);
+
+
+
+
+6. Tell me some performance tuning techniques in Snowflake.
+1. Use Cluster keys effectively
+Clustering is basically grouping a bunch of values together so that it improves your query performance.
+
+We define cluster keys on big tables, below are the best practices to define cluster keys.
+
+→ Don't define on small tables
+→ Define on filter columns
+→ Define on join keys
+→ Define on function based columns
+
+We can define cluster keys at the time creating tables, also we can add or modify cluster keys by using Alter Statement.
+
+2. Make use of Results cache for faster retrieval of Data.
+(24hrs) →30 days 
+
+3. Use materialized views Wisely
+→on more frequently accessed tables
+→on tables with less frequent data changes
+
+4. And other common sql tuning techniques like
+→Select only required columns
+→ Replace 'OR' with Union
+→ Union All is always better if we are sure there are no duplicates
+→ Try to avoid inequality with 'OR' condition
+→ Avoid unnecessary joins
+→ Avoid using 'distinct'
+
+
+9. How can you handle if the data coming from file is exceeds the length of a filed in the table
+Ans: We can handle this by using (TRUNCATECOLUMNS = TRUE) in Copy command.
+If we don't specify this property, Copy command will fail. By default this property is set to FALSE.
+
+COPY INTO JANA DB. STAGE TBLS. STG EMPL_DTLS 
+FROM @EXT STG_AZURE 
+file format (type = csv field_delimiter, skip_header=1);
+FILES ('ompl_atlsi.txt') 
+TRUNCATECOLUMNS= TRUE;
+
+
+10. How the Cost is calculated in Snowflake? Ans: There are two types of costs in Snowflake.
+→ Storage Cost
+→ Compute Cost
+
+
+11. How many cluster keys is advised on single table?
+Ans: Snowflake recommends a maximum of 3 or 4 columns (or expressions) for clustering keys on tables. Adding more than 3-4 columns tends to increase costs more than benefits.
+
+
+12. What are all the objects that can be cloned in Snowflake?
+Ans: Below objects can be cloned in Snowflake.
+*Data Containment Objects
+Databases
+Schemas
+Tables
+Streams
+
+*Data Configuration and Transformation Objects
+Stages
+File Formats
+Sequences
+Tasks
+
+
+13. What are Secure Views in Snowflake?
+Ans:
+If we define the views with secure keyword then unauthorized users can't see the definition of views using GET_DDL, SHOW VIEWS, DESC commands.
+
+Normal views allows anyone to see the view definition.
+
+CREATE OR REPLACE SECURE VIEW SALES DATA
+AS
+SELECT ID. AMOUNT, TRAN_DATE FROM SALES WHERE STATE = "TX";
+
+
+
+18. What are all the objects that can be shared in Snowflake?
+Ans: The following Snowflake database objects can be shared.
+Tables.
+External tables.
+Secure views.
+Secure materialized views.
+Secure UDFs.
+
+
+19. What is a materialized view in Snowflake?
+Ans: A materialized view is a pre-computed data set derived from a query specification and stored for later use.
+
+Because the data is pre-computed, querying a materialized view is faster than executing a query against the base table of the view.
+
+
+CREATE OR REPLACE MATERIALIZED VIEW ORDERS_MV
+AS
+SELECT
+YEAR (O ORDERDATE) AS YEAR.
+MAX (0 COMMENT) AS MAX COMMENT,
+MINIO COMMENT) AS MIN COMMENT,
+MAXIO CLERK) AS MAX CLERK MIN(O CLERK) AS MIN CLERK
+FROM ORDERS.TPCH SF100.ORDERS GROUP BY YEAR (0_ORDERDATE);
+
+
+20. How to refresh the data in materialized views?
+Ans: No need to manually refresh material views. After you create a materialized view, a background process automatically maintains the data in the materialized view.
+
+To see the last time that a materialized view was refreshed, check the REFRESHED_ON and BEHIND BY columns in the output of the command SHOW MATERIALIZED VIEWS.
+
+To see the refresh history of any Materialized View
+
+MATERIALIZED_VIEW_REFRESH HISTORY
+( [DATE_RANGE_START => <constant_expr>] 
+[.DATE_RANGE_END => <constant_expr>] 
+[.MATERIALIZED_VIEW_NAME => <string>'])
+
+
+21. What is difference btn Star schema and Snowflake schema
+Ans: Star schema contains a fact table and the dimension tables those are denormalized but the snowflake schema contains a fact table and may be normalized dimension tables.
+
+When it comes to performance in snowflake schema there will be more number of joins when compared to star schema because of its normalized dimension tables. So Start schema gives better performance.
+
+
+22. Snowflake is an ETL or ELT?
+
+Ans: Snowflake supports both ETL and ELT.
+
+We can transform and load the data at the same time we can load the data to snowflake and transform it.
+
+
+23. What is snowpipe and write syntax for creating snowpipe.
+Ans: Snowpipe is Snowflake's continuous data ingestion service. Snowpipe loads
+data within minutes after files are added to a stage and submitted for ingestion.
+
+→Snowpipe is serverless compute model.
+→Snowpipe provides a "pipeline" for loading fresh data in micro-batches as soon as it is available.
+
+CREATE OR REPLACE PIPE PIPE_NAME AUTO_INGEST = TRUE
+AS
+COPY INTO DBNAME.SCHEMANAME. TABLENAME FROM @EXTERNAL_STAGE_NAME;
+
+DESC PIPE PIPE_NAME;
+
+
+24. What are the roles available in Snowflake?
+Ans: Roles are the entities to which privileges on snowflake objects can be granted and revoked.
+
+→ Roles are assigned to users to allow them to perform actions required for business functions in their organization. → A user can be assigned multiple roles.
+
+Two types of roles in Snowflake.
+1. System defined roles
+2. Custom roles
+
