@@ -1,0 +1,15 @@
+Q1: how to give sequence number to newly added column in a table in snowflake?
+
+Ans -We can do this by using sequences in snowflake. execute below code to understand.
+
+Example:
+create table abc(col1 varchar);
+
+insert into abc values ('a'),('b'), ('c'), ('d'), ('e'), ('f'),('g'),('h');
+
+alter table abc add column col2 number; 
+create sequence seq1;
+
+update abc set col2=seq1.nextval;
+
+select * from abc;
