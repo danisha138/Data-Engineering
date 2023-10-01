@@ -27,4 +27,4 @@ NOTE::The standard retention period is 1 day (24 hours) and is automatically ena
 | Permanent (Enterprise Edition and higher) |     | 0 to 90 (default is configurable)   |
 +-------------------------------------------+-----+-------------------------------------+
 
-
+If the TIMESTAMP, OFFSET, or STATEMENT specified in the AT | BEFORE clause falls outside the data retention period for the table, the query fails and returns an error.
