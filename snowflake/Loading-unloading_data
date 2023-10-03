@@ -1,6 +1,12 @@
 The COPY command allows unloading or exporting data from a table
 or a view and also allows using queries (SELECT) to unload data.
 
+
+The GET command is used to download data from an internal stage to an on-premises system. The PUT command uploads data from an on-premises system to an internal stage. To download or upload date to am external stage, cloud provider utilities or other tools are used to interact with data in the cloud storage pointed to by the external stage.
+
+
+
+The GET command is used to download data from an internal stage to an on-premises system. The PUT command uploads data from an on-premises system to an internal stage. To download or upload data to an external stage, cloud provider utilities or other tools are used to interact with data in the cloud storage pointed to by the external stage.
 When loading data into a table using the COPY command, 
 Snowflake allows you to do simple transformations on the data as it is being loaded by 
 using a SELECT statement. During the load process, the COPY command allows for modifying the order of columns,
@@ -8,4 +14,15 @@ omitting one or more columns, and casting data into specified data types. It is 
 width.
 
 
+COPY command uses virtual warehouse resources. Snowpipe is billed separately and does not use virtual warehouse resources. 
+Snowpipe is serverless and has its own computational capability; therefore, it does not rely on virtual warehouses for processing. 
+Snowflake automatically manages the compute required by a Snowpipe. Snowflake also manages the scaling up and down of a Snowpipe as per the data load requirement. 
+Since a Snowpipe is serverless, its costs are charged separately from virtual warehousing fees.
 
+
+Snowflake allows continuous data loading using Snowpipe, a serverless service. 
+Snowpipe enables you to load data in a micro-batch manner, loading small volumes of data on each execution. 
+The micro-batch-based data loading is used when a continuous stream of data, such as transactions or events, must be loaded and made available to enterprises quickly. 
+Snowpipe enables continuous data loading and can load data within a few minutes after it arrives in a stage. 
+Snowpipe is serverless and has its own computational capability: therefore, 
+it does not rely on virtual warehouses for processing.
