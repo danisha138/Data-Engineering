@@ -1,4 +1,11 @@
 The COPY command allows unloading or exporting data from a table
 or a view and also allows using queries (SELECT) to unload data.
 
+When loading data into a table using the COPY command, 
+Snowflake allows you to do simple transformations on the data as it is being loaded by 
+using a SELECT statement. During the load process, the COPY command allows for modifying the order of columns,
+omitting one or more columns, and casting data into specified data types. It is also possible to truncate data using the COPY command if it is larger than the desired column
+width.
+
+
 
