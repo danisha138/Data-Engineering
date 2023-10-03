@@ -20,6 +20,10 @@ Snowflake automatically manages the compute required by a Snowpipe. Snowflake al
 Since a Snowpipe is serverless, its costs are charged separately from virtual warehousing fees.
 
 
+
+
+
+The load metadata stores a variety of information, such as the name of every file that was loaded into that table and the time stamp corresponding to the time that a file was loaded. By utilizing this load metadata, Snowflake ensures that it will not reprocess a previously loaded file. The load metadata expires after 64 days. Snowflake skips over any older files for which the load status is undetermined
 Snowflake allows continuous data loading using Snowpipe, a serverless service. 
 Snowpipe enables you to load data in a micro-batch manner, loading small volumes of data on each execution. 
 The micro-batch-based data loading is used when a continuous stream of data, such as transactions or events, must be loaded and made available to enterprises quickly. 
