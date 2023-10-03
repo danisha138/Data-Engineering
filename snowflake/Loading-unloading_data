@@ -1,3 +1,25 @@
+Unloading Data from Snowflake
+
+o Unloading data or exporting data is almost the same as loading o It uses the same COPY mechanism and the concept of stages
+o Unload to different file formats
+o Compress & Encrypt while unloading
+
+• Supported File Formats for data unloading
+• Simple delimited files
+CSV
+TSV
+o Any other separator character
+o Parquet
+⚫ JSON
+Only NDISON (new line delimited JSON) is supported
+
+Compression
+Automatically compressed to gzip
+Can change compression mechanism
+Can disable compression if required
+
+
+
 The COPY command allows unloading or exporting data from a table
 or a view and also allows using queries (SELECT) to unload data.
 
