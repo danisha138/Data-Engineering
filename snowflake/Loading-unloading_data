@@ -1,0 +1,4 @@
+The COPY command allows unloading or exporting data from a table
+or a view and also allows using queries (SELECT) to unload data.
+
+
