@@ -151,3 +151,11 @@ We can write UDFS
 Ex: we can write a function to calculate Tax Amount for all employees.
 
 Note: In snowflake we can write procedures and UDFS in multiple languages like SQL, JavaScript, Python, Java and Scala.
+
+
+
+Q16:Is the data in a Snowflake internal stage stored in an encrypted format?
+Yes. All data in Snowflake is stored in an encrypted manner. So, data in tables and internal stages is encrypted automatically.
+
+Q17:Is the data encrypted prior to being transferred to a Snowflake internal stage?
+Yes. SnowSQL encrypts data before performing the PUT operation, so the data is encrypted well before it is uploaded.
