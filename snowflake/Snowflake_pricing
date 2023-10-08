@@ -1,0 +1,12 @@
+Cost Depends On?
+
+Snowflake cost is dependent on
+1. Snowflake Edition
+Standard - $2.7/Credit-
+Enterprise - $4/Credit
+Business Critical - $5.4/Credit
+VPS-Depends on Org
+
+2. Region where Snowflake account created
+3. Cloud platform where Snowflake account hosted
+4. Virtual Warehouse Size
