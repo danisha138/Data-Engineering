@@ -26,3 +26,8 @@ Pay-as you Use / Pay-as you go
 • Option to Pre-purchase capacity
 • A Capacity purchase is a specific dollar commitment to snowflake
 • Snowflake charges $23 per month/TB (compressed)
+
+
+Q.How to choose Storage Type?
+1.When you are not sure about your data size, start with On Demand
+2.Once you are sure switch to Capacity Storage
