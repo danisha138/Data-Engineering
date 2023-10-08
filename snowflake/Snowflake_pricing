@@ -10,3 +10,19 @@ VPS-Depends on Org
 2. Region where Snowflake account created
 3. Cloud platform where Snowflake account hosted
 4. Virtual Warehouse Size
+
+
+
+Storage Cost
+• The charge for Storage is per terabyte after compressed, per month.
+• 2 Storage Plans available in Snowflake.
+
+1. On Demand Storage:
+• Most flexible and easiest model
+Pay-as you Use / Pay-as you go
+• Customer are charged FIXED rate of $40/TB Per month (compressed)
+
+2. Capacity Storage (or) Fixed Storage: 
+• Option to Pre-purchase capacity
+• A Capacity purchase is a specific dollar commitment to snowflake
+• Snowflake charges $23 per month/TB (compressed)
