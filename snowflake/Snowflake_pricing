@@ -31,3 +31,18 @@ Pay-as you Use / Pay-as you go
 Q.How to choose Storage Type?
 1.When you are not sure about your data size, start with On Demand
 2.Once you are sure switch to Capacity Storage
+
+
+
+Compute Cost
+Compute cost is calculated based on the Virtual Warehouse usage per month
+• Compute cost is calculated in Snowflake Credits
+• Billed per seconds with 1 minute minimum
+• If we choose Large size and if we used it for 30 minutes then it will be billed as 4 Credits.
+
+
+
+Serverless Features
+Serverless features use snowflake-managed compute resources and consume
+snowflake credits when they are used. 
+We can see the credit usage on the bill.
