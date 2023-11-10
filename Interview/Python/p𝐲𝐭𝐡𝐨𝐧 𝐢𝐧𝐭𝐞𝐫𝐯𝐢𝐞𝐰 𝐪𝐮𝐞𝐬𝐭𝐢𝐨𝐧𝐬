@@ -1,0 +1,30 @@
+1) What is NumPy?
+2) What is Pandas?
+3) Explain the difference between a List and a Tuple.
+4) Explain the concept of List Comprehension.
+5) How do you handle missing data in pandas DataFrame?
+6) Explain the difference between loc and iloc in pandas.
+7) What is a scatter plot?
+8) What is the purpose of Matplotlib library?
+9) How do you perform basic descriptive statistics in pandas?
+10) What is the 'groupby' function is pandas?
+11) Explain the concept of normalization and standardization in the context of data preprocessing.
+12) How does the 'merge' function work in pandas?
+13) Explain the purpose of the 'apply' function in pandas.
+14) What is a correlation matrix, and how is it useful in data analysis?
+15) How do you handle categorical data in a pandas DataFrame?
+16) Explain the concept of a pivot table in pandas.
+17) How do you handle outliers in a dataset?
+18) What is a lambda function in Python?
+19) How is a lambda function different from a regular function in Python?
+20) Can a lambda function have multiple expressions?
+21) Explain the purpose of the 'filter' function.
+22) How does the 'map' function work?
+23) What is the purpose of the 'reduce' function?
+24) Explain the difference between the append and extend methods in a list.
+25) How do you concatenate two lists in Python?
+26) What is the purpose of the 'concat' function in the pandas library?
+27) Differentiate between the sort method and the sorted function.
+28) How can you sort a list of tuples based on the second element of each tuple?
+29) How do you filter rows in a DataFrame based on a condition in pandas?
+30) How do you handle duplicate values in a pandas DataFrame?
