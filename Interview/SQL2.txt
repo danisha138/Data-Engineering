@@ -1,0 +1,18 @@
+🎃 Write a SQL query to get the number of days between first and last purchase of each customer from table emp.
+(Columns: ustomer_id and purchase_date)
+
+🎁 SQL code:
+
+SELECT
+customer_id,
+DATEDIFF(MAX(purchase_date), MIN(purchase_date)) AS days_between_purchases
+FROM
+emp
+GROUP BY customer_id;
+
+
+🎈 MAX(purchase_date) retrieves the latest purchase date for each customer.
+🎈 MIN(purchase_date) retrieves the earliest purchase date for each customer.
+🎈 DATEDIFF() calculates the difference in days between the latest and earliest purchase dates.
+🎈 GROUP BY customer_id groups the results by customer, 
+so you get the number of days between the first and last purchase for each customer.
