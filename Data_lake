@@ -1,0 +1,36 @@
+🔴 𝐋𝐚𝐤𝐞𝐡𝐨𝐮𝐬𝐞 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞
+
+Lakehouse intents us to provide the features of both 𝐃𝐚𝐭𝐚 𝐋𝐚𝐤𝐞 and Data Warehouse.
+
+
+Some of the benefits of 𝐃𝐚𝐭𝐚 𝐋𝐚𝐤𝐞 are
+🔺They are Inexpensive.
+🔺They are massively scalable
+🔺They can store all kinds of data like structured,semi-structured,unstructured.
+🔺Datalakes support open file formats like parquet.
+
+We face some challenges with 𝐃𝐚𝐭𝐚𝐋𝐚𝐤𝐞
+🔺They don't support ACID Properties
+🔺They are not suitable for BI & Reporting Workloads
+
+In an organization to serve all the usecases they use to have combination of 𝐃𝐚𝐭𝐚 𝐋𝐚𝐤𝐞 and 𝐃𝐚𝐭𝐚 𝐖𝐚𝐫𝐞𝐡𝐨𝐮𝐬𝐞
+
+𝐃𝐚𝐭𝐚 𝐋𝐚𝐤𝐞 use to server Machine Learning and Data Science Usecases.Some part of this data use to go to 𝐃𝐚𝐭𝐚 𝐖𝐚𝐫𝐞𝐡𝐨𝐮𝐬𝐞 which use to serve the reporting and BI usecases.
+
+So we use to have 2 different systems.This 2 Tier Architecture is called as 𝐌𝐨𝐝𝐞𝐫𝐧 𝐃𝐚𝐭𝐚𝐰𝐚𝐫𝐞𝐡𝐨𝐮𝐬𝐞 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞.
+
+Now there are some challenges with this Modern 𝐃𝐚𝐭𝐚𝐖𝐚𝐫𝐞𝐡𝐨𝐮𝐬𝐞 Architecture like
+🔺We deal with 2 different systems(Data Lake and Data warehouse)
+🔺We have data duplication issues
+🔺When moving data from Datalake to Datawarehouse it needs additional ETL Activities.
+🔺In Datawarehouse we'll get stale data in the sense not the latest data
+
+So nowadays Organization use Lakehouse Architecture which gives us a Single system with features of both Data Lake and Datawarehouse
+
+🔴𝐎𝐛𝐣𝐞𝐜𝐭𝐢𝐯𝐞𝐬 𝐨𝐟 𝐋𝐚𝐤𝐞𝐡𝐨𝐮𝐬𝐞 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞:
+🔺It should be Inexpensive
+🔺It should be able to handle all kinds of data
+🔺Should support open file formats
+🔺Data duplication should be reduced
+🔺ETL Activities should be reduced
+🔺Mainly it should be able to handle all kinds of workloads like Machine learning,Data science,Business Intelligence,Reporting Usecases.
