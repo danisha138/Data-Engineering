@@ -1,0 +1,23 @@
+Normalization vs. Denormalization
+
+Normalization is the technique of dividing the data into multiple tables to reduce data redundancy and inconsistency
+and to achieve data integrity. On the other hand, Denormalization is the technique of combining the data into a single table
+to make data retrieval faster.
+
+Normalization is used in an OLTP system, which emphasizes making the insert, delete and update anomalies faster.
+As the opposite, Denormalization is used in an OLAP system, which emphasizes making the search and analysis faster.
+
+Data integrity is maintained in the normalization process while in denormalization data integrity harder to retain.
+
+Redundant data is eliminated when normalization is performed whereas denormalization increases the redundant data.
+
+Normalization increases the number of tables and joins. In contrast, denormalization reduces the number of tables and joins.
+
+Disk space is wasted in denormalization because the same data is stored in different places. On the contrary, disk space is 
+optimized in a normalized table.
+
+Conclusion
+Normalization and denormalization are useful according to the situation. Normalization is used when the faster
+insertion, deletion and update anomalies, and data consistency are necessarily required. On the other hand, 
+Denormalization is used when the faster search is more important and to optimize the read performance. 
+It also lessens the overheads created by over-normalized data or complicated table joins.
