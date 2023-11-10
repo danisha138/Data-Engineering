@@ -1,0 +1,15 @@
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import explode, split
+
+spark = SparkSession.builder.appName("WordCount").getOrCreate()
+
+input_path = "your_cloud_storage_path/*.txt"
+text_data = spark.read.text(input_path)
+words = text_data.select(explode(split(text_data.value, " ")).alias("word"))
+
+# Group by words and count their occurrences
+word_count = words.groupBy("word").count()
+
+# To get the total word count, you can use:
+total_word_count = word_count.selectExpr("sum(count) as total_count").collect()[0]["total_count"]
+print("Total Word Count:", total_word_count)
