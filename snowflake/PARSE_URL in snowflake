@@ -1,0 +1,51 @@
+Consider an URL
+INTPUT: https://lnkd.in/dMvHu54g (LinkedIn will convert the url)
+convert it to OUTPUT as key value pair.
+
+OUTPUT:
+{
+"fragment": null,
+"host": "www.linkedin.com",
+"parameters": null,
+"path": "in/avinash-s-553378151/",
+"port": null,
+"query": null,
+"scheme": "https"
+}
+
+Solution: Use PARSE_URL function to PARSE the URL:
+
+Consider a situation. Select * From TABLE1 is as below.
++------------+
+| ORDERKEYS |
+|------------|
+| 41445 |
+| 55937 |
+| 67781 |
+| 80550 |
+| 95808 |
+| 101700 |
+| 103136 |
++------------+
+
+Pivot the above column of output into an array in a single row .
+
+Output:
++---------------------+
+| PIVOT |
+|-----------------------|
+| [ |
+| 41445, |
+| 55937, |
+| 67781, |
+| 80550, |
+| 95808, |
+| 101700, |
+| 103136 |
+| ] |
++-----------------------+
+
+Solution: Is to use ARRAY_AGG this will PIVOT the column to a array.
+
+SELECT ARRAY_AGG(ORDERKEYS) WITHIN GROUP (ORDER BY ORDERKEYS ASC)
+FROM TABLE1;
