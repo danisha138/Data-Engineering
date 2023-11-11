@@ -1,0 +1,3 @@
+how to enable column name in hive.
+
+set hive.cli.print.header=true:
