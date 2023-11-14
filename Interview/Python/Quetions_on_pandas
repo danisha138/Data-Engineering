@@ -1,0 +1,18 @@
+What is Pandas in Python, and why is it used for data analysis?
+How do you import Pandas in a Python script?
+Explain the primary data structures in Pandas: Series and DataFrame.
+How can you read a CSV file into a Pandas DataFrame?
+What are the differences between loc and iloc in Pandas?
+How do you handle missing data in a Pandas DataFrame?
+Explain the process of selecting specific columns from a DataFrame.
+How can you filter rows in a DataFrame based on a specific condition?
+What is the purpose of the .groupby() function in Pandas, and how is it used?
+How do you sort a DataFrame by a specific column in ascending and descending order?
+Explain the concept of data normalization. Why is it important in data analysis? (Imp)
+What is the difference between a correlation and a covariance?
+How can you merge two DataFrames in Pandas? What are the different types of joins?
+How do you create new columns in a Pandas DataFrame based on existing columns?
+Explain the process of pivot tables in Pandas and provide a use case.
+What is the purpose of the .agg() function in Pandas, and how is it used for aggregation?
+How can you export a Pandas DataFrame to a CSV file?
+How do you handle duplicates in a Pandas DataFrame?
