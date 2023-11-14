@@ -1,0 +1,11 @@
+1. Explain order of execution of SQL.
+2. What is difference between where and having?
+3. What is the use of group by?
+4. Explain all types of joins in SQL?
+5. What are triggers in SQL?
+6. What is stored procedure in SQL
+7. Explain all types of window functions? (Mainly rank, row_num, dense_rank, lead & lag)
+8. What is difference between Delete and Truncate?
+9. What is difference between DML, DDL and DCL?
+10. What are aggregate function and when do we use them? explain with few example.
+11. Which is faster between CTE and Subquery?
