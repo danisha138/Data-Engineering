@@ -1,0 +1,15 @@
+Most asked Interview questions on HIVE
+
+🔺What is Hive partitioning, and how does it improve query performance?
+
+🔺 Explain Hive's query optimization techniques.
+
+🔺What are Hive UDF’s, UDAF, UDTF and when to use each of them?
+
+🔺 Describe Hive's bucketing and how it can be useful in data organization.
+
+🔺 Explain Hive's concept of SerDe (Serializer/Deserializer) and give an example of when you might need a custom SerDe.
+
+🔺 Discuss the Hive architecture and its integration with Hadoop.
+
+🔺 How can you optimize latency issue
