@@ -1,0 +1,37 @@
+🎯Python interview questions for data engineering:🔥
+======================
+🔷Python fundamentals
+
+🔸What are the different data types in Python?
+🔸What is the difference between a list, tuple, and dictionary?
+🔸What is the difference between a function and a method?
+🔸What is the difference between a class and an object?
+🔸What is the difference between a module and a package?
+🔸What are some of the built-in Python functions and modules that are useful for data engineering?
+
+🔷Data structures and algorithms
+-----------------------------
+🔸What is a hash table?
+🔸What is a binary search tree?
+🔸What is a linked list?
+🔸What is a graph?
+🔸What is the difference between a time complexity of O(log n) and O(n)?
+🔸What is the difference between a space complexity of O(1) and O(n)?
+
+🔷Python libraries for data engineering
+------------------------
+
+🔸What are some of the most popular Python libraries for data engineering?
+🔸What is NumPy and why is it useful for data engineering?
+🔸What is Pandas and why is it useful for data engineering?
+🔸What is Spark and why is it useful for data engineering?
+🔸What is Airflow and why is it useful for data engineering?
+
+🔷Specific Python interview questions for data engineering:
+-----------------------------
+🔸Write a Python function to calculate the mean, median, and mode of a list of numbers.
+🔸Write a Python function to find the most frequent words in a given text.
+🔸Write a Python function to join two DataFrames on a common column.
+🔸Write a Python function to filter a DataFrame based on multiple criteria.
+🔸Write a Python script to load data from a CSV file into a database table.
+🔸Write a Python script to create a Spark DataFrame from a JSON file.
