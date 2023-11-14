@@ -1,6 +1,0 @@
-Here are a few examples of the Python questions
-1. Fibonacci series
-2. Determining whether a number is prime or not (Yes, I was asked this in my interview with Rakuten)
-3. Reordering a list, such as [0, 5, 9, 0, 20, 12, 0], so that all zeros are placed at the end while maintaining the order of non-zero elements.
-4. Use Lambda function:
-Input: [1,2,3,4,5,6]
