@@ -1,0 +1,21 @@
+Pyspark Interview questions for Data Engineering roles.
+
+What is the difference between Spark Context and Spark Session?
+
+What are the different approaches for creating RDD in PySpark?
+
+What do you understand by Pyspark's startsWith() and endsWith() methods?
+
+How the Pyspark execution happens?
+
+Difference between RDD and DataFrame?
+
+Advantages of RDD over DataFrame or Datasets?
+
+What is uber mode in Hadoop?
+
+Difference between Hive and Impala?
+
+Explain me why Spark and Pyspark?
+
+Difference between groupByKey and reduceByKey?
