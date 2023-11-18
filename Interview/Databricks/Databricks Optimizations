@@ -1,0 +1,23 @@
+Databricks Optimizations !!
+
+Use Cache table/dataframe for re-usable tables or confirmed dimensions.
+
+Create partitions on every table and for fact tables use partition column on key join column like country_code, city, market_code
+
+Land data in Blob Store/ADLS partitioned into separate directory
+
+Use Delta Lake performance features like OPTIMIZE with ZORDER
+
+Use hints for improving query performance like BROADCAST.
+
+• Enable Auto Optimize option for all staging tables delta.autoOptimize.optimizeWrite = true and
+
+delta.autoOptimize.autoCompact = true
+
+Use Repartition hints for balancing partitions
+
+Delete temporary tables after notebook execution
+
+Use Lower() or Upper() when comparing strings or common filter conditions to avoid losing data
+
+Enable adaptive query execution (AQE)
