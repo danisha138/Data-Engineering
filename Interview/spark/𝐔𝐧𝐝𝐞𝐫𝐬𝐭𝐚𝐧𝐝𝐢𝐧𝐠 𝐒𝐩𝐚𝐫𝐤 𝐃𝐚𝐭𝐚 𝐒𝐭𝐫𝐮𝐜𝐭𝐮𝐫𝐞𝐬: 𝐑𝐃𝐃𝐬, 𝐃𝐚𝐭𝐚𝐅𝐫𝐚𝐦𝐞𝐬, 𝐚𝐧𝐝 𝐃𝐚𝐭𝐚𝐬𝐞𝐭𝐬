@@ -1,0 +1,27 @@
+𝐔𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝𝐢𝐧𝐠 𝐒𝐩𝐚𝐫𝐤 𝐃𝐚𝐭𝐚 𝐒𝐭𝐫𝐮𝐜𝐭𝐮𝐫𝐞𝐬: 𝐑𝐃𝐃𝐬, 𝐃𝐚𝐭𝐚𝐅𝐫𝐚𝐦𝐞𝐬, 𝐚𝐧𝐝 𝐃𝐚𝐭𝐚𝐬𝐞𝐭𝐬
+
+In Spark, RDDs, DataFrames, and Datasets are represented by distinct types or classes in the codebase. The way Spark knows whether it's an RDD, DataFrame, or Dataset is based on its 𝐭𝐲𝐩𝐞.
+
+The "𝐭𝐲𝐩𝐞 𝐢𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧" is the explicit mention of what category or type a piece of data belongs to. It helps the computer understand how to handle that data.
+
+1. 𝐑𝐃𝐃:
+val numbers: RDD[Int] = sparkContext.parallelize(Seq(1, 2, 3))
+
+Here, numbers is an RDD containing integers. The type RDD[Int] tells Spark that it's an 𝐑𝐃𝐃 𝐨𝐟 𝐢𝐧𝐭𝐞𝐠𝐞𝐫𝐬. The [Int] indicates what type of data is inside the RDD.
+
+2. 𝐃𝐚𝐭𝐚𝐅𝐫𝐚𝐦𝐞:
+val df: DataFrame = sparkSession.read.csv("path/to/file.csv")
+
+Here, df is a DataFrame. The type is 𝐃𝐚𝐭𝐚𝐅𝐫𝐚𝐦𝐞, which means the data inside is organized in rows and columns, but Spark doesn't have specific type information for each column.
+
+3. 𝐃𝐚𝐭𝐚𝐬𝐞𝐭:
+case class Person(name: String, age: Int)
+val people: Dataset[Person] = Seq(Person("John", 25)).toDS()
+
+Here, people is a Dataset containing data of type 𝐏𝐞𝐫𝐬𝐨𝐧. The type Dataset[Person] tells Spark it's a Dataset of Person objects. The [Person] is the type information here.
+
+Now, 𝐡𝐨𝐰 𝐝𝐨𝐞𝐬 𝐒𝐩𝐚𝐫𝐤 𝐝𝐢𝐟𝐟𝐞𝐫𝐞𝐧𝐭𝐢𝐚𝐭𝐞 𝐛𝐞𝐭𝐰𝐞𝐞𝐧 𝐭𝐡𝐞𝐦?
+𝐓𝐲𝐩𝐞 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧: In languages like Scala and Java, type information is retained, allowing Spark to know whether you're working with an RDD, DataFrame, or a Dataset of a specific type.
+𝐒𝐩𝐚𝐫𝐤𝐒𝐞𝐬𝐬𝐢𝐨𝐧 & 𝐒𝐩𝐚𝐫𝐤𝐂𝐨𝐧𝐭𝐞𝐱𝐭: Generally, you use the SparkContext to create RDDs and the SparkSession to create DataFrames and Datasets. This is another indication to Spark about the nature of the data structure being created.
+
+In summary, the differentiation between RDDs, DataFrames, and Datasets is fundamentally embedded in Spark's architecture through classes and type information, allowing Spark to know which data structure you're working with based on the operations and methods you use.
