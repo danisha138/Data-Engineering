@@ -32,11 +32,13 @@ FROM salary_table
 WHERE Month BETWEEN 'January' AND 'July';
 
 
-6. Write a SQL query to display year-on-year growth for each product. (Columns: transaction_id, Product_id, transaction_date, spend, Output: year, product_id, yoy_growth)
+6. Write a SQL query to display year-on-year growth for each product. (Columns: transaction_id, Product_id, transaction_date, 
+spend, Output: year, product_id, yoy_growth)
 
 SELECT EXTRACT(YEAR FROM transaction_date) AS year,
  Product_id,
- (spend - LAG(spend, 1, 0) OVER (PARTITION BY Product_id ORDER BY transaction_date)) / LAG(spend, 1, 0) OVER (PARTITION BY Product_id ORDER BY transaction_date) * 100 AS yoy_growth
+ (spend - LAG(spend, 1, 0) OVER (PARTITION BY Product_id ORDER BY transaction_date)) / LAG(spend, 1, 0) OVER 
+(PARTITION BY Product_id ORDER BY transaction_date) * 100 AS yoy_growth
 FROM transactions;
 
 
