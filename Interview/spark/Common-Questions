@@ -7,3 +7,23 @@
 7. Avro vs Parquet vs ORC file formats.
 9. Jobs vs Stages vs Tasks.
 10. Hash Aggregate vs Sort Aggregate.
+
+1. how are initial number of partitions calculated in a dataframe
+
+2. what happens internally when you execute spark-submit
+
+3. what is a partition skew and how to tackle it
+
+4. what are the spark optimization techniques you have used
+
+5. what is a broadcast join, how does it work internally
+
+6. how do you optimize 2 large table joins
+
+7. please explain about memory management in apache spark
+
+8. what is caching in spark, and when do you consider caching a dataframe
+
+9. how do you handle out of memory errors in spark
+
+10. what is the difference between partitioning and bucketing, please explain with a usecase
