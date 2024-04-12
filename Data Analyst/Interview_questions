@@ -1,0 +1,91 @@
+Question 1:
+Given a dataset in a CSV file, how would you read it into a Pandas DataFrame? And how would you handle missing values?
+
+Question 2:
+Describe the difference between a list, a tuple, and a dictionary in Python. Provide an example for each.
+
+Question 3:
+Imagine you are provided with two datasets, 'sales_data' and 'product_data', both in the form of Pandas DataFrames. How would you merge these datasets on a common column named 'ProductID'?
+
+Question 4:
+How would you handle duplicate rows in a Pandas DataFrame? Write a Python code snippet to demonstrate.
+
+Question 5:
+In Python's Matplotlib library, how would you plot a line chart to visualize monthly sales? Assume you have a list of months and a list of corresponding sales numbers.
+
+Question 6:
+How would you use Python to connect to a SQL database and fetch data into a Pandas DataFrame?
+
+Question 7:
+Explain the concept of list comprehensions in Python. Can you provide an example where it's useful for data analysis?
+
+Question 9:
+How would you reshape a long-format DataFrame to a wide format using Pandas? Explain with an example.
+
+Question 10:
+What are lambda functions in Python? How are they beneficial in data wrangling tasks?
+
+Question 11:
+Describe a scenario where you would use the 'groupby()' method in Pandas. How would you aggregate data after grouping?
+
+Question 12:
+You are provided with a Pandas DataFrame that contains a column with date strings. How would you convert this column to a datetime format? Additionally, how would you extract the month and year from these datetime objects?
+
+Question 13:
+Explain the purpose of the 'pivot_table' method in Pandas and describe a business scenario where it might be useful.
+
+Question 14:
+How would you handle large datasets that don't fit into memory? Are you familiar with Dask or any similar libraries?
+
+Question 15:
+In a dataset, you observe that some numerical columns are highly skewed. How can you normalize or transform these columns using Python?
+
+
+------------
+1. What is Pandas, and why is it popular in data analysis?
+2. How do you import Pandas in Python?
+3. What is a DataFrame in Pandas?
+4. How do you read a CSV file into a Pandas DataFrame?
+5. How can you check the first few rows and last few rows of a DataFrame?
+6. What is the difference between loc and iloc in Pandas?
+7. How do you select a specific column in a DataFrame?
+8. How do you filter rows in a DataFrame based on a condition?
+9. How do you handle missing values in Pandas?
+10. Explain the process of merging two DataFrames in Pandas.
+11. What is the purpose of the groupby function in Pandas, and how is it used?
+12.  How can you rename columns in a DataFrame?
+13.  Explain the difference between Series and DataFrame in Pandas.
+14.  What is the purpose of the apply function in Pandas, and how is it used?
+15.  How do you export a Pandas DataFrame to a CSV file?
+16.  Explain the concept of pivot tables in Pandas.
+
+#NumPy:
+
+17.  What is NumPy, and how is it different from Python lists?
+18.  How do you create a NumPy array?
+19.  Explain the concept of broadcasting in NumPy.
+20.  How do you perform element-wise addition of two NumPy arrays?
+21.  What is the purpose of the np.mean() function in NumPy?
+22.  How do you reshape a NumPy array?
+23.  What is the difference between np.dot() and np.matmul() in NumPy?
+24.  How can you find the maximum and minimum values in a NumPy array?
+25.  Explain the use of NumPy's random module for generating random numbers.
+
+#Matplotlib:
+
+26.  What is Matplotlib, and how is it used for data visualization in Python?
+27.  How do you create a basic line plot using Matplotlib?
+28.  Explain the difference between plt.figure() and plt.subplots() in Matplotlib.
+29.  How can you add labels to the x-axis and y-axis in a Matplotlib plot?
+30.  What is the purpose of the plt.legend() function in Matplotlib?
+31.  How do you save a Matplotlib plot as an image file?
+32.  Explain the difference between a scatter plot and a line plot in Matplotlib.
+
+#Seaborn:
+
+33.  What is Seaborn, and how does it compare to Matplotlib for data visualization?
+34.  How do you create a histogram using Seaborn?
+35.  What is a heatmap, and how can you create one using Seaborn?
+36.  How do you customize the color palette in a Seaborn plot?
+37.  Explain the use of the sns.countplot() function in Seaborn.
+38.  How can you create subplots in a Seaborn figure using the sns.FacetGrid
