@@ -1,6 +1,7 @@
 Unloading Data from Snowflake
 
-o Unloading data or exporting data is almost the same as loading o It uses the same COPY mechanism and the concept of stages
+o Unloading data or exporting data is almost the same as loading
+o It uses the same COPY mechanism and the concept of stages
 o Unload to different file formats
 o Compress & Encrypt while unloading
 
