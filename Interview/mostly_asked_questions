@@ -1,4 +1,4 @@
-1. Explain order of execution of SQL.
+
 2. What is difference between where and having?
 3. What is the use of group by?
 4. Explain all types of joins in SQL?
@@ -9,3 +9,18 @@
 9. What is difference between DML, DDL and DCL?
 10. What are aggregate function and when do we use them? explain with few example.
 11. Which is faster between CTE and Subquery?
+12.Explain Order of Execution of SQL query
+13.Provide a use case for each of the functions Rank, Dense_Rank & Row_Number 
+14.Write a query to find the cumulative sum/Running Total
+15.Find the Most selling product by sales/ highest Salary of employees
+16.Write a query to find the 2nd/nth highest Salary of employees
+17.Difference between union vs union all
+18.Identify if there any duplicates in a table
+19.Scenario based Joins question, understanding of Inner, Left and Outer Joins via simple yet tricky question
+20. LAG, write a query to find all those records where the transaction value is greater then previous transaction value
+21. Rank vs Dense Rank, query to find the 2nd highest Salary of employee
+22. Write a query to find the Running Difference (Ideal sol'n using windows function)
+23. Write a query to display year on year/month on month growth
+24. Write a query to find rolling average of daily sign-ups
+25. Write a query to find the running difference using self join (helps in understanding the logical approach, ideally this question is solved via windows function)
+26. Write a query to find the cumulative sum using self join
