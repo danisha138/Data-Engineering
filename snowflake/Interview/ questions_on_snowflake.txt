@@ -1,0 +1,42 @@
+--> What data type accomodate any data type. -- VARIANT (universal-16MB) / ARRAY / OBJECT
+--> Snowflake performance
+--> How to load the bulk data.
+--> How to automate the bulk load / or any load.
+--> What is Micro partition
+--> What are the data formats used in snowflake? ( CSV, JSON, AVRO, ORC, PARQUET, and XML...
+--> What are the special features with snowflake .. why snowflake?
+--> How data is stored in Snowflake.?
+--> How to transfer the data from SF AZ to SF AWS
+--> Snow pipe
+--> Check the credits : Admin » Usage. >> Select warehouse or ORGANIZATION_USAGE and ACCOUNT_USAGE 
+--> What is Time travel / fail safe
+--> How to handle streams.
+--> Masking policies for sensitive data
+--> SNOW PARK
+--> How to cluster / re cluster
+--> Tree structure
+--> How to micro batches
+--> Event driven push
+--> Different security mechanism
+--> Data sharing
+--> Data cloning
+--> How other users can access stage
+--> Row Level access controls ****
+--> Redshift to Snowflake -> How the data model and Data got loaded.
+--> How Json process in Snowflake
+
+--> Exceptions
+-- Data vault data model
+-- Big data Modelling
+-- How to identify the bottleneck in snowflake .
+-- Load records with / error
+-- Diff copy into snowpipe
+
+
+--> how to check the usage of virtual warehouse
+--> What is transient tables
+--> Snow queing
+--> how to alter cache size
+--> What will happen if memory is overloaded 
+-- What will cost Snowflake - Compute Resources, Storage, Cloud services -> STORAGE_USAGE_HISTORY
+-- Micro partition overlapping-- Dynamic tables.-- Integration of S3 buckets
