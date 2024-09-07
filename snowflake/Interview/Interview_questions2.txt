@@ -211,3 +211,30 @@ Solution: Is to use ARRAY_AGG this will PIVOT the column to a array.
 
 SELECT ARRAY_AGG(ORDERKEYS) WITHIN GROUP (ORDER BY ORDERKEYS ASC)
 FROM TABLE1;
+
+
+
+Q20:wWhich object can be cloned?
+
+In Snowflake, the following objects can be cloned:
+
+Data Containment Objects
+
+Databases
+Schemas
+Tables
+Streams
+Data Configuration and Transformation Objects
+
+Stages (external only - not internal)
+File Formats
+Sequences
+Tasks
+The following account level objects cannot be cloned:
+
+Users
+Roles
+Grants
+Virtual Warehouses
+Resource monitors
+Storage integrations
