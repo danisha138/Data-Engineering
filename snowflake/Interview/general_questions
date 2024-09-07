@@ -1,0 +1,21 @@
+Some other frequently asked sql questions.
+
+1. What is the diff between NVL and NVL2.
+
+2.What are the DML commands in sql?
+
+3. What is diff between varchar and nvarchar?
+
+4. What is an index in database?
+
+5. What is the diff between case and decode?
+
+6. What are the types of slowly changing dimensions?
+
+7. How a data warehouse is different from a database?
+
+8. What is the diff between rank() and dense_rank()? 
+
+9. Write a query to find nth highest salary.
+
+10. Write a query to fetch all the employee details with even number emp_id.
