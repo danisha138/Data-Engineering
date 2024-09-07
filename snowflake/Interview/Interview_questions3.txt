@@ -9,8 +9,6 @@ What objects Cannot be shared in Snowflake?
 What are the limitations of Snowflake share object ?
 can we share the share object from producer  to another consumer
 
-
-
 What are the features of Snowflake?
 What is the schema in Snowflake?
 What kind of SQL does Snowflake use?
