@@ -1,0 +1,523 @@
+Q1. Does snowflake enforce primary key?
+
+Ans- The primary key for a foreign key can be on a different table or the same table as the foreign key. 
+Snowflake supports defining and maintaining constraints, but does not enforce them, 
+except for NOT NULL constraints,which are always enforced.
+
+
+Q2. Does Snowflake support indexes?
+Ans- Snowflake does not support indexes, though it does support "clustering" for performance improvements of I/O.
+
+
+
+Q3. Does data in external stage count towards your Snowflake storage?
+Ans-
+No. External stages point to external cloud storage locations. Data in those external locations are managed and maintained independently and is managed by the respective cloud provider. An external stage only refers to an external location and doesn't physically hold any data.
+
+Q4. The load metadata for a table expires after how many days?
+Ans 64 days
+
+1. What is Snowflake and what kind of Database it is?
+
+Ans: Snowflake is a cloud based Data Warehouse available as SaaS (Software as a Service), Snowflake enables Data storage And Data analytic solutions.
+
+Snowflake doesn't have their own infrastructure and currently it can be set up on Azure, AWS and GCP.
+
+Snowflake is pure SQL database, it organizes the data into multiple micro partitions that are internally optimized and compressed. It uses a columnar format to store.
+
+2. What are the Advantages of Snowflake over traditional Databases? (or) What are the new features available in Snowflake?
+
+Ans: Lot of new features and Advantages.
+Pay as you use
+No infrastructure maintenance
+Easy Data loading
+Time Travel and Fail Safe
+Zero copy Cloning
+Easy Data Sharing
+Tasks and Streams
+
+
+3. What are stages in Snowflake and write a query to create a Stage.
+Ans: Snowflake Stages are the locations where data files are stored
+There are 2 types of stages in Snowflake.
+
+External Stages: If the data that needs to be loaded into Snowflake is stored in other cloud regions like AWS S3 or Azure or GCP then then we can use External Stages.
+
+CREATE OR REPLACE EXTSTG_AZURE 
+STORAGE INTEGRATION = azst_jana_apr22
+URL = azure://optumstagejana22.blob.core.windows.net/datalakejana 
+FILE_FORMAT = FILE_FORMAT_AZURE
+
+Internal Stages: Stores the Data files internally, we can copy files to Internal stages by
+using PUT command from Snowsql.
+
+
+4. Write the syntax of a Copy command to load a file into snowflake table.
+
+Ans:
+COPY INTO JANA_DB.STAGE_TBLS.STG_EMPL_DTLS 
+FROM @EXT_STG_AZURE
+file_format= (type = csv field_delimiter="," skip_header=1);
+FILES ('empl_dtls1.txt', 'empl_dtls2.txt'); 
+(or) PATTERN. empl_dtls.*";
+
+
+6. Can you use Where clause in Copy command?
+
+Ans: No, we can't use where clause in Copy command.
+
+But We can do some transformations while loading the data by using copy. 
+→ Select only required fields
+→ Can use functions like substring, cast etc.
+→ Can use Case statement;
+
+7. How can you load a json file to Snowflake? (or) how can you process and load semi-structured data?
+
+Ans: We can store this semi-structure data into a table by using a data type called 'Variant'.
+Then we can read this data from Variant, we can process it into rows and columns and load it into another table.
+
+CREATE OR REPLACE TABLE JANA_DB.STAGE_TBLS.PETS_DATA_JSON_RAW (raw_file variant);
+
+
+
+
+6. Tell me some performance tuning techniques in Snowflake.
+1. Use Cluster keys effectively
+Clustering is basically grouping a bunch of values together so that it improves your query performance.
+
+We define cluster keys on big tables, below are the best practices to define cluster keys.
+
+→ Don't define on small tables
+→ Define on filter columns
+→ Define on join keys
+→ Define on function based columns
+
+We can define cluster keys at the time creating tables, also we can add or modify cluster keys by using Alter Statement.
+
+2. Make use of Results cache for faster retrieval of Data.
+(24hrs) →30 days 
+
+3. Use materialized views Wisely
+→on more frequently accessed tables
+→on tables with less frequent data changes
+
+4. And other common sql tuning techniques like
+→Select only required columns
+→ Replace 'OR' with Union
+→ Union All is always better if we are sure there are no duplicates
+→ Try to avoid inequality with 'OR' condition
+→ Avoid unnecessary joins
+→ Avoid using 'distinct'
+
+
+9. How can you handle if the data coming from file is exceeds the length of a filed in the table
+Ans: We can handle this by using (TRUNCATECOLUMNS = TRUE) in Copy command.
+If we don't specify this property, Copy command will fail. By default this property is set to FALSE.
+
+COPY INTO JANA DB. STAGE TBLS. STG EMPL_DTLS 
+FROM @EXT STG_AZURE 
+file format (type = csv field_delimiter, skip_header=1);
+FILES ('ompl_atlsi.txt') 
+TRUNCATECOLUMNS= TRUE;
+
+
+10. How the Cost is calculated in Snowflake? Ans: There are two types of costs in Snowflake.
+→ Storage Cost
+→ Compute Cost
+
+
+11. How many cluster keys is advised on single table?
+Ans: Snowflake recommends a maximum of 3 or 4 columns (or expressions) for clustering keys on tables. Adding more than 3-4 columns tends to increase costs more than benefits.
+
+
+12. What are all the objects that can be cloned in Snowflake?
+Ans: Below objects can be cloned in Snowflake.
+*Data Containment Objects
+Databases
+Schemas
+Tables
+Streams
+
+*Data Configuration and Transformation Objects
+Stages
+File Formats
+Sequences
+Tasks
+
+
+13. What are Secure Views in Snowflake?
+Ans:
+If we define the views with secure keyword then unauthorized users can't see the definition of views using GET_DDL, SHOW VIEWS, DESC commands.
+
+Normal views allows anyone to see the view definition.
+
+CREATE OR REPLACE SECURE VIEW SALES DATA
+AS
+SELECT ID. AMOUNT, TRAN_DATE FROM SALES WHERE STATE = "TX";
+
+
+
+18. What are all the objects that can be shared in Snowflake?
+Ans: The following Snowflake database objects can be shared.
+Tables.
+External tables.
+Secure views.
+Secure materialized views.
+Secure UDFs.
+
+
+19. What is a materialized view in Snowflake?
+Ans: A materialized view is a pre-computed data set derived from a query specification and stored for later use.
+
+Because the data is pre-computed, querying a materialized view is faster than executing a query against the base table of the view.
+
+
+CREATE OR REPLACE MATERIALIZED VIEW ORDERS_MV
+AS
+SELECT
+YEAR (O ORDERDATE) AS YEAR.
+MAX (0 COMMENT) AS MAX COMMENT,
+MINIO COMMENT) AS MIN COMMENT,
+MAXIO CLERK) AS MAX CLERK MIN(O CLERK) AS MIN CLERK
+FROM ORDERS.TPCH SF100.ORDERS GROUP BY YEAR (0_ORDERDATE);
+
+
+20. How to refresh the data in materialized views?
+Ans: No need to manually refresh material views. After you create a materialized view, a background process automatically maintains the data in the materialized view.
+
+To see the last time that a materialized view was refreshed, check the REFRESHED_ON and BEHIND BY columns in the output of the command SHOW MATERIALIZED VIEWS.
+
+To see the refresh history of any Materialized View
+
+MATERIALIZED_VIEW_REFRESH HISTORY
+( [DATE_RANGE_START => <constant_expr>] 
+[.DATE_RANGE_END => <constant_expr>] 
+[.MATERIALIZED_VIEW_NAME => <string>'])
+
+
+21. What is difference btn Star schema and Snowflake schema
+Ans: Star schema contains a fact table and the dimension tables those are denormalized but the snowflake schema contains a fact table and may be normalized dimension tables.
+
+When it comes to performance in snowflake schema there will be more number of joins when compared to star schema because of its normalized dimension tables. So Start schema gives better performance.
+
+
+22. Snowflake is an ETL or ELT?
+
+Ans: Snowflake supports both ETL and ELT.
+
+We can transform and load the data at the same time we can load the data to snowflake and transform it.
+
+
+23. What is snowpipe and write syntax for creating snowpipe.
+Ans: Snowpipe is Snowflake's continuous data ingestion service. Snowpipe loads
+data within minutes after files are added to a stage and submitted for ingestion.
+
+→Snowpipe is serverless compute model.
+→Snowpipe provides a "pipeline" for loading fresh data in micro-batches as soon as it is available.
+
+CREATE OR REPLACE PIPE PIPE_NAME AUTO_INGEST = TRUE
+AS
+COPY INTO DBNAME.SCHEMANAME. TABLENAME FROM @EXTERNAL_STAGE_NAME;
+
+DESC PIPE PIPE_NAME;
+
+
+24. What are the roles available in Snowflake?
+Ans: Roles are the entities to which privileges on snowflake objects can be granted and revoked.
+
+→ Roles are assigned to users to allow them to perform actions required for business functions in their organization. → A user can be assigned multiple roles.
+
+Two types of roles in Snowflake.
+1. System defined roles
+2. Custom roles
+
+
+
+25. What are the roles available in Snowflake? - Continued
+Ans:
+ACCOUNTADMIN
+SECURITYADMIN
+SYSADMIN
+USERADMIN
+
+
+26. What are the editions of Snowflake and which one you are using in your project?
+
+Ans: There are 4 editions of Snowflake,
+
+1. Standard
+2. Enterprise
+3. Business Critical
+4. Virtual Private
+
+→These editions differ in terms of multi clusters, time travel, security and many other features
+
+> Cost depends on Snowflake edition we choose
+Standard $2.7/Credit 
+Enterprise $4/Credit
+Business Critical - $5.4/Credit
+
+Most of the organizations use either Enterprise or Business Critical
+
+
+
+27. What is the virtual warehouse size you are using in your project? and how many clusters?
+Ans:
+→ We have to choose size based on the data size you are dealing with and the queries complexity. Size can be anything from XS to 6XL
+
+→ Number of clusters depends on the number of concurrent jobs you are running. You can start with single cluster and you can scale out when your jobs increases.
+
+→ Also VW size and number of clusters depends on the Environment, Dev, Test, Prod etc. based on the data and jobs you are dealing within that environment.
+
+You can say we are using 'M' size with 4 clusters
+
+
+30. What is Vertical scaling and Horizontal scaling?
+Ans:
+Vertical Scaling (Scale up): Increasing the Virtual Warehouse Size to reduce the processing time and make you queries running faster.
+
+Horizontal Scaling (Scale out): Increasing the number of clusters to avoid queries going into queues, you need to scale out when your customer base grows or when your parallel queries/jobs increases.
+max(10 nodes)
+
+
+
+31. What are the diff table types in Snowflake?
+Ans: Snowflake supports 3 types of tables.
+1. Permanent Tables: For permanent tables, time travel is 0-90 days of retention period and 7 days fail safe period.
+
+2. Transient Tables: Similar to permanent table but use where data protection and data recovery is not required, 0-1 day retention period and does not support fail safe.
+
+3. Temporary Tables: Only active in that session and gets dropped once we close the session, 0-1 day retention period and does not support fail safe. Can be used in stored procedure for intermediate data storage.
+
+Note: If you create any Database/Schema as Transient then all the tables under that Database/Schema are Transient by default.
+
+
+32. Can you create a Temp table with the same name as a Permanent table?
+Ans: Yes we can create, and all the queries will be fetching the data from Temporary table in that session.
+
+
+33. How can you convert a Temp/Transient table into Permanent table?
+Ans:
+After creation, transient tables cannot be converted to any other table type.
+
+After creation, temporary tables cannot be converted to any other table type
+
+
+
+34. What are different caches available in Snowflake?
+Ans: Two types of caches available in Snowflake.
+
+► Result Cache: It holds the results of every query executed in the past 24 hours. These are available across virtual warehouses, so query results returned to one user is available to any other user on the system who executes the same query, provided the underlying data has not changed.
+we can turn off the result cache
+
+► Local Disk Cache: It is used to cache data used by SQL queries. Whenever data is needed for a given query it's retrieved from the Remote Disk storage, and cached in SSD and memory.
+
+
+35. What are streams in Snowflake? Write a query to create a Stream.
+Ans: A Stream object records the delta of change data capture (CDC) information for a table such as a staging table including inserts and other data manipulation language (DML) changes like Update and Delete.
+
+CREATE OR REPLACE STREAM STREAM_NAME ON TABLE TABLE_NAME;
+
+This stream will record all the changes occurring to the table over time.
+
+
+36. How the Stream tracks the changes occurring a table?
+Ans: Every stream contains 2 fields, based on the values of these 2 fields we can identify the record is a Insert record or Update record or Delete record.
+
+METADATASACTION - Insert/Delete METADATASISUPDATE - True/False
+
+METADATASACTION=INSERT and METADATASISUPDATE=FALSE→ Insert Record 
+METADATASACTION=DELETE and METADATASISUPDATE=FALSE→ Delete Record 
+
+METADATASACTION= INSERT and METADATASISUPDATE= TRUE→ Update Record
+
+Note: A Streams records Update operation as a set of Delete(delete old record) and Insert(insert updated record).
+
+Given an example merge query to process all changes Insert/Delete/Update in the description of this video.
+
+
+
+37. What are the types of streams available in Snowflake?
+Ans: Three types of stream.
+
+Standard Streams: Supported for streams on tables, directory tables(external stages), or views. A standard stream tracks all DML changes to the source object, including inserts, updates, and deletes.
+
+Append-Only Streams: Supported for streams on tables, directory tables, or views. An append-only stream tracks row inserts only. Update and delete operations are not recorded.
+
+Insert-Only Streams: Supported for streams on external tables only. An insert-only stream tracks row inserts only; they do not record delete operations.
+
+
+
+38. What is a Task and write syntax to create a Task?
+Ans: A Task object is used schedule the execution of a SQL statement, including statements that call stored procedures.
+
+→ We have to provide the Virtual Warehouse to execute the sql statement. 
+→ We can also use Cron scheduling in Tasks.
+
+CREATE OR REPLACE TASK TASK_NAME 
+WAREHOUSE = COMPUTE WH 
+SCHEDULE = '1 MINUTE
+AS 'SQL Statement";
+
+CREATE OR REPLACE TASK TASK_NAME 
+WAREHOUSE = COMPUTE WH 
+SCHEDULE 'USING CRON 07*** UTC'
+AS 'SQL Statement';
+
+We can create Task of tree to maintain dependency.
+
+
+41. How can you implement column level security in Snowflake?
+Ans: We can do this by using Dynamic data masking feature available in Snowflake. 
+Snowflake supports using Dynamic Data Masking on columns of tables and views. 
+
+We can partially mask the data or fully mask the data from un-authorized users. First we have to create a masking policy and then we can apply this policy on the columns we
+wanted to implement security.
+
+-Creating masking policy
+create or replace masking policy policy_name as (val varchar) returns varchar ->
+case
+when current_role() in ('SYSADMIN', 'ACCOUNTADMIN') then val else '######
+end;
+
+--Applying policy on a column
+ALTER TABLE IF EXISTS table_name MODIFY COLUMN column_name SET MASKING POLICY policy_name;
+
+
+
+42. Write syntax to create a stored proc and an UDF.
+Ans:
+create or replace procedure proc_name()
+returns datatype
+language sql / can write in sql, java, jave script, scala "/
+AS
+$$
+sql statements;
+$$;
+
+create function area_of_circle(radius float) returns float / can write in sql, java, jave script "/
+as
+$$
+pi() radius radius
+$$
+
+
+43. Best practices you followed in Snowflake?
+Ans:
+1. Choose appropriate table type
+2. Define cluster keys on large table only and choose proper cluster keys
+3. Reduce default retention period
+4. Enable auto suspend and auto resume
+5. Choose appropriate warehouse size, use scale-up and scale-out effectively
+6. Understand storage and compute costs
+
+
+44. What is the difference between Where and Having?
+Ans:
+Where clause is used to filter data while Having is used to filter the summary data after applying the grouping functions like count, sum, avg etc.
+
+Can you use both where and having in single sql statement?, Yes, we can, below is one example.
+
+Query to fetch list of depts that contains more than 10 Active employees.
+
+SELECT DEPT_NO, COUNT(1) FROM EMP WHERE EMP_STS='A' GROUP BY DEPT NO HAVING COUNT(1) > 10;
+
+
+45. Query to delete duplicate records from a table?
+Ans:
+DELETE FROM TABLE_NAME
+WHERE ROWID NOT IN
+(SELECT MAX(ROWID) FROM TABLE NAME GROUP BY Key1, Key2):
+
+If your database doesn't support ROWID then use Rank approach or below temporary table approach.
+
+1. Create a temp table with unique records of the actual table 
+2. Delete the data from actual table and insert data from temp table to actual table
+3. Drop temp table
+
+
+46. What is the diff between Union and Union All?
+Ans:
+UNION eliminates duplicate records after clubbing all records .
+UNION ALL will not eliminate the duplicate records.
+
+When it comes to performance UNION ALL gives better performance because it doesn't need to perform duplicate elimination task.
+
+Note: To perform UNION and UNION ALL, list of columns and order of columns should be same in all statements or tables.
+
+
+
+
+49. What is the difference between Coalesce and Decode?
+Ans:
+COALESCE(): The COALESCE() function examines the first expression, if the first expression is not null, it returns that expression Otherwise, it does a COALESCE of the remaining expressions. In simple words COALESCE() function returns the first not-null expression in the list.
+
+Syntax - COALESCE (expr_1, expr_2, ... expr_n)
+
+DECODE(): The DECODE function decodes an expression in a way similar to the IF-THEN-ELSE logic used in various languages. The DECODE function decodes expression after comparing it to each search value. If the expression is the same as search, result is returned.
+
+Syntax -
+
+DECODE(collexpression, search1, result1 [, search2, result2,...,][, default])
+
+
+
+50. What is diff between Primary Key, Unique Key and Surrogate Key?
+Ans:
+
+Unique key contains unique values in that field, it does not allow duplicates but allows nulls.
+
+Primary key helps identifying the record uniquely in the table, basically it is Unique+Not Null, means it won't allow duplicates and nulls.
+
+Surragte key is a key with no business meaning and it is just a number (mostly we define Surragate Id as Numeric) assigned to each row in the table.
+
+Note 1: A table can contain any number of unique keys but contains only one primary key.
+
+Note 2: A primary key can be combination of multiple columns that define a unique record in the table, but surrogate key is a single column.
+
+
+51. How to convert a timestamp to date in Snowflake?
+Ans:
+To extract Date from Timestamp:
+
+select to_date('2022-05-22 00:00:00'); -- 2022-05-22
+
+To extract Year, Month, Day from Timestamp:
+select year(to_date('2022-05-22 00:00:00')); -- 2022
+select month(to_date('2022-05-22 00:00:00')); -- 05
+select day(to_date('2022-05-22 00:00:00')); -- 22
+
+
+
+52. How to fetch only numeric characters from a string in Snowflake?
+Ans:
+SELECT TRIM(REGEXP_REPLACE(string, '[[:digit:]]", ")) AS Numeric_value
+FROM
+(SELECT Area code for employee ID 12345 is 6789.' AS string ) a;
+
+
+
+
+
+Some other frequently asked sql questions.
+
+1. What is the diff between NVL and NVL2.
+
+2.What are the DML commands in sql?
+
+3. What is diff between varchar and nvarchar?
+
+4. What is an index in database?
+
+5. What is the diff between case and decode?
+
+6.What are the types of slowly changing dimensions?
+
+7. How a data warehouse is different from a database?
+
+8. What is the diff between rank() and dense_rank()? 
+
+9.Write a query to find nth highest salary.
+
+10. Write a query to fetch all the employee details with even number emp_id.
+

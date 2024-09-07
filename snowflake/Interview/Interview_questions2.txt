@@ -1,0 +1,161 @@
+Q1: how to give sequence number to newly added column in a table in snowflake?
+
+Ans -We can do this by using sequences in snowflake. execute below code to understand.
+
+Example:
+create table abc(col1 varchar);
+
+insert into abc values ('a'),('b'), ('c'), ('d'), ('e'), ('f'),('g'),('h');
+
+alter table abc add column col2 number; 
+create sequence seq1;
+
+update abc set col2=seq1.nextval;
+
+select * from abc;
+
+
+
+Q2: While apply masking to a date field can I show only year and rest of the date can be masked?? If yes how can we achieve that??
+Yes, we can do that.
+
+If the column is DATE, then we need to return a valid DATE. So maybe you can truncate the dates up to the years.
+
+CREATE OR REPLACE MASKING POLICY date_mask_Idm AS (val date) 
+RETURNS date-> CASE WHEN CURRENT_ROLE() in ("ADMIN")
+THEN val
+ELSE DATE TRUNC 'year', val) END;
+
+So if the date is 2022-11-30', it will be shown as '2022-01-01' because of the masking policy.
+
+select date_trunc("year", current_date);
+
+select current timestamp ;
+select date_trune year, current_timestamp); 
+select date_franc month, current_timestamp);
+select date trane day, current timestamp):
+
+Q3: One of your query is taking long time to run, how can you handle in that situation?
+There can be lot of reasons for this, we can resolve with below steps.
+
+1. First check that, query is in running state or in waiting state, 
+if it is waiting state, check how many clusters of virtual warehouses you are using and
+how many concurrent queries are running. If it is happening every day then we have to scale out(increase no.of clusters) 
+to avoid queries going into waiting queue.
+
+2. If query is in running state, then check how much data you are handling and your virtual warehouse size, if required scaleup your virtual warehouse to next size.
+
+3. Still if query is running for long time, go to query profile where it shows the flow diagram of steps and check which step is taking long time and then we can apply some performance tuning techniques.
+
+Note: if we running same queries again and again enable cache, it will improve the performance a lot.
+
+
+
+Q4: How to get dropped table data, if we recreate a table with same name as dropped table?
+
+There is table with name EMP with 1000 records
+Day1: dropped EMP table
+Day2: created a table with name EMP and inserted 5000 records
+Day3: I need data from EMP table that I had dropped on Day1
+
+How to get that Day1 data?
+
+Ans:
+ALTER TABLE RENAME EMP to EMP_Day2;
+UNDROP TABLE EMP; 
+ALTER TABLE RENAME EMP to EMP_Day1;
+ALTER TABLE RENAME EMP_Day2 to EMP;
+
+Now EMP_Day1 table contains the data from dropped table.
+
+
+Q5: Question on cloned table
+
+Question:
+Let A is original table and B is cloned table, 
+if we insert data into Table B, will it reflect to table A and what happens to the storage?
+
+Answer:
+After cloning there will be no impact of rows insertion or deletion on either of the tables.
+
+If you insert or delete records in Table A, it will not reflect on Table B.
+
+If you insert or delete records in Table B, it will not reflect on Table A.
+
+But when it comes to the storage, there will be impact.
+
+Suppose Original Table A contains 1M records and cloned the same to Table B. After that I have inserted 1000 rows in Table B, then there will be storage cost will be only for those 1000 records which are not available in original table.
+
+
+
+Q6: Question on Tasks
+
+Question:
+When we can schedule queries by using Tasks in snowflake, why we go for third party scheduling tools?
+
+Answer:
+By using Tasks we can schedule the tasks and monitor them from TASK_HISTORY table which is difficult.
+But third party scheduling tools offer UI based monitoring and it is very easy to control the job flow like holding jobs, releasing dependencies, cancelling or killing jobs etc.
+ 
+Control-M
+Airflow
+Ansible
+TWS
+Active Batch
+JAMS Scheduler
+
+
+Q7: How can I convert my Teradata DDL to Snowflake DDL?
+We can't convert 100s of tables DDL from a traditional database to Snowflake manually, but we can use below ways.
+
+1. Use roboquery tool which can convert DDL from any database to any other database including Snowflake, in free version we can convert only 5 per day. https://roboquery.com/app/
+
+2. You can develop a python script to convert all DDL at a time.
+
+3. You can write a Procedure in snowflake to convert the DDLs to Snowflake.
+
+
+Q8: What is the difference btn Full load and Incremental Delta Load? And how to choose?
+
+In full load, the complete data set will be loaded every time where we delete/truncate the target table data and load the new dataset.
+
+In Incremental loads we will fetch only the data that was inserted/updated after previous load and load that to target table by using UPSERT operations(update existing record and insert new record). We can pull incremental data from source with help of LAST_UPDATE_TIMESTAMP and perform UPSERT by using key fields.
+
+How to choose Full load or Incremental load?
+
+1. Based on the data volume and load frequency, we can't perform full loads if we are dealing with large data sets and we have to load every hour or every day.
+
+2. If there are no keys to identify incremental data from Source, we can go for full load. 3. If there are no join keys to perform UPSERTS, we can go for full load.
+
+
+
+Q9: My Snowflake account was hosted on Azure, can I load the data that is present in AWS S3 or Google Cloud Storage?
+Yes we can read the data from any of the 3 cloud storage providers(Google, Azure, AWS).
+
+As Snowflake doesn't have their own cloud they are dependent(can host) on other cloud storage providers, it doesn't mean that if you host your account on Azure you can only extract data from Azure cloud, you can extract the data from any of these 3 clouds.
+
+
+
+
+Q15: In which scenarios you have written stored procedures and UDFs(User Defined Functions)?
+
+We can write stored procedures
+
+1. When there is a need to execute multiple SQL statements in some order. 
+2. When there is a need to apply same logic multiple times or at multiple places with different parameters.
+3. To automate certain things.
+
+We can write UDFS
+1. When certain functionality is not available through built-in or system defined functions, and we use that functionality multiple times.
+
+Ex: we can write a function to calculate Tax Amount for all employees.
+
+Note: In snowflake we can write procedures and UDFS in multiple languages like SQL, JavaScript, Python, Java and Scala.
+
+
+
+Q16:Is the data in a Snowflake internal stage stored in an encrypted format?
+Yes. All data in Snowflake is stored in an encrypted manner. So, data in tables and internal stages is encrypted automatically.
+
+Q17:Is the data encrypted prior to being transferred to a Snowflake internal stage?
+Yes. SnowSQL encrypts data before performing the PUT operation, so the data is encrypted well before it is uploaded.
