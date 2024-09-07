@@ -1,0 +1,15 @@
+1. Size of warehouse in project and how did you decide it. 
+2. When do we require to use multi-cluster and auto-scaling warehouses
+3.  How does a multi cluster warehouse setup work?
+4. Different types of caching in Snowflake. 
+5. Is a warehouse and database dependent on each other. 
+6. Can a warehouse be mapped to different databases?
+7. Two modes in which a multi-cluster warehouse can run. 
+8. Idea on snowflake warehouse pricing. 
+9. How do you define role access control in a warehouse?
+10. Auto suspension and auto resumption
+11. Monitoring warehouse load - good to know. 
+12. How are Virtual warehouses and storage independent of each other ? 
+13. How does query processing happen on a warehouse?
+14. Do virtual warehouses share resources with other warehouses ?
+15. When you resize a warehouse how does it affect any running query in process using it. 
