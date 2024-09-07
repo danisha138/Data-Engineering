@@ -218,20 +218,19 @@ Q20:wWhich object can be cloned?
 
 In Snowflake, the following objects can be cloned:
 
-Data Containment Objects
-
+*Data Containment Objects
 Databases
 Schemas
 Tables
 Streams
-Data Configuration and Transformation Objects
 
+*Data Configuration and Transformation Objects
 Stages (external only - not internal)
 File Formats
 Sequences
 Tasks
-The following account level objects cannot be cloned:
 
+*The following account level objects cannot be cloned:
 Users
 Roles
 Grants
