@@ -168,7 +168,6 @@ Secure UDFs.
 
 19. What is a materialized view in Snowflake?
 Ans: A materialized view is a pre-computed data set derived from a query specification and stored for later use.
-
 Because the data is pre-computed, querying a materialized view is faster than executing a query against the base table of the view.
 
 
@@ -196,15 +195,14 @@ MATERIALIZED_VIEW_REFRESH HISTORY
 
 
 21. What is difference btn Star schema and Snowflake schema
-Ans: Star schema contains a fact table and the dimension tables those are denormalized but the snowflake schema contains a fact table and may be normalized dimension tables.
+Ans: Star schema contains a fact table and the dimension tables those are denormalized but
+    the snowflake schema contains a fact table and may be normalized dimension tables.
 
 When it comes to performance in snowflake schema there will be more number of joins when compared to star schema because of its normalized dimension tables. So Start schema gives better performance.
 
 
 22. Snowflake is an ETL or ELT?
-
 Ans: Snowflake supports both ETL and ELT.
-
 We can transform and load the data at the same time we can load the data to snowflake and transform it.
 
 
@@ -273,8 +271,7 @@ You can say we are using 'M' size with 4 clusters
 
 
 30. What is Vertical scaling and Horizontal scaling?
-Ans:
-Vertical Scaling (Scale up): Increasing the Virtual Warehouse Size to reduce the processing time and make you queries running faster.
+Ans:Vertical Scaling (Scale up): Increasing the Virtual Warehouse Size to reduce the processing time and make you queries running faster.
 
 Horizontal Scaling (Scale out): Increasing the number of clusters to avoid queries going into queues, you need to scale out when your customer base grows or when your parallel queries/jobs increases.
 max(10 nodes)
