@@ -1,3 +1,27 @@
+1. Snowflake Architecture and its various components  
+2. Data loading and challenges faced  
+3. Data loading includes copy command, how do you create stages, various stages - table/internal/external  
+4. How do stages differ from each other?  
+5. How to create external stage referencing S3 bucket/ADSL  
+6. Scenarios like how do you handle duplicates as integrity constraints are not enforced in SF  
+7. What are warehouses and how do you design it  
+8. Performance optimization - Auto Scaling, Caching, and clustering  
+9. Scenarios where you have used time travel features  
+10. UDF and how have you used it?  
+11. Restrictions in SF as compared to RDBMS database  
+12. If you have worked on migration, what are challenges faced and how did you overcome it  
+13. Task, streams implementation scenario  
+14. Structured/semi-structured files: how have you loaded them?  
+15. Volume of data you have handled  
+16. Architecture of your project  
+17. Orchestration of SF pipelines - tools being used for it  
+18. How do you handle transactional transactions in Snowflake  
+19. Snowpipe  
+20. Data Unloading  
+21. Role-based access management - important to have knowledge on this  
+22. How do normal views and materialized views differ in Snowflake  
+
+
 Retention of streams
 Limitattion of stream, tasks
 how do u handle failure of task
@@ -19,3 +43,4 @@ What is SnowPipe?
 Is Snowflake OLTP or OLAP?
 How to create a Snowflake task?
 How is Snowflake different from Redshift?
+
