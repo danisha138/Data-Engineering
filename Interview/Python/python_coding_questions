@@ -4,3 +4,83 @@ Here are a few examples of the Python questions
 3. Reordering a list, such as [0, 5, 9, 0, 20, 12, 0], so that all zeros are placed at the end while maintaining the order of non-zero elements.
 4. Use Lambda function:
 Input: [1,2,3,4,5,6]
+
+####################################################
+#Python Interview Questions->
+1 Write a Python program to swap two variables without using a third variable? 
+
+2 How can you check if a string contains only digits in Python? 
+
+3 Write a Python program to hashtaghashtag#reverse a hashtaghashtag#string ? 
+
+4 How do you remove hashtaghashtag#duplicates from a list in Python? 
+
+5 Write a Python function to check if a hashtaghashtag#number is a hashtaghashtag#palindrome 
+
+6 How can you implement a stack using Python hashtaghashtag#lists? 
+
+7 Write a Python hashtaghashtag#function to find the intersection of two lists 
+
+8 How do you merge two hashtaghashtag#dictionaries in Python? 
+
+9 Write a Python function to flatten a nested list 
+
+10 How can you check if a key exists in a dictionary? 
+
+11 Write a Python program to print the hashtaghashtag#Fibonacci series up to a given number 
+
+12 How do you find the factorial of a number using recursion? 
+
+13 Write a Python function to hashtaghashtag#count the occurrences of a character in a string 
+
+14 How do you iterate over a dictionary in hashtaghashtag#Python? 
+
+15 Write a Python function to generate all permutations of a list 
+
+16 What is a lambda function in Python, and how is it used? 
+
+17 Write a Python function to find the greatest common divisor (GCD) of two numbers 
+
+18 How do you pass a function as a parameter in Python? 
+
+19 Write a Python function that uses a lambda to sort a list of tuples based on the second element 
+
+20 How can you define a function with optional arguments in Python? 
+
+### Object-Oriented Programming
+
+21 Write a simple class in Python with an initializer and a method 
+
+22 How do you implement inheritance in Python? 
+
+23 Write a Python class that implements a basic calculator with add, subtract, multiply, and divide methods 
+
+24 What is method overriding in Python? Provide an example 
+
+25 Explain how to implement a static method in Python 
+
+26 Write a Python function that handles a division by zero exception 
+
+27 How do you create a custom exception in Python? 
+
+28 What is the purpose of the `finally` block in exception handling? 
+
+29 Write a Python program to read a file and handle exceptions if the file is not found 
+
+30 Explain the use of the `else` block in Python exception handling 
+
+31 Write a Python generator function to produce an infinite sequence of even numbers 
+
+32 How can you implement a decorator in Python? Provide an example 
+
+33 What is the difference between an iterator and an iterable in Python? 
+
+34 Write a Python function to demonstrate the use of `map` and `filter` 
+
+35 Explain the concept of list comprehensions in Python with an example 
+
+36 How do you install a Python package using pip? 
+
+37 Write a Python script to make a GET request to a URL using the `requests` library 
+
+38 How can you read a CSV file in Python using `pandas`?
