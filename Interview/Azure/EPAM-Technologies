@@ -1,0 +1,27 @@
+1. Coding Questions: Pyspark:
+You've been given some CSV files like karnataka.csv and maharashtra.csv in an ADLS location, each containing columns for first_name, last_name, age, sex, and location.
+Your task is to add a new column called state to each DataFrame. The state column should contain the state name extracted from the filename.
+For example:
+For karnataka.csv, the state column should contain the value 'karnataka'.
+For maharashtra.csv, the state column should contain the value 'maharashtra'.
+Your solution should utilize PySpark to efficiently handle large-scale data processing tasks.
+
+2. Coding Question: Python/ DSA:
+A. Reverse a string without using reverse function
+B. Write a python program to implement following. Given a pattern and a string. If string matches the pattern return true else return false. 
+Ex: 
+Pattern – “abba”, String – “dog cat cat dog” will return true. 
+Pattern – “aba”, String – “dog dog cat” will return false.
+
+3. Coding Question: SQL
+Find the 3-month rolling average of total revenue from purchases given a table with users, their purchase amount, and date purchased (YYYY-MM-DD). Output the year-month (YYYY-MM) and 3-month rolling average of revenue, sorted from earliest month to latest month.
+
+4. Explain Spark Architecture.
+
+5. What is Z-ordering?
+
+6. Difference between Datamart, Datawarehouse and Deltalake
+
+7. Compare performance of Managed and External Table
+
+8. Difference between blob Store and ADLS Gen2
