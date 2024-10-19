@@ -1,0 +1,20 @@
+
+1) Find Employees Who Had a Higher Sales Performance in the Current Year Compared to the Previous Year ?
+Schema: 
+Employees(EmployeeID, Name)
+Sales(SaleID, EmployeeID, SaleDate, Amount)
+
+2) Find Departments Where All Employees Earn Above the Average Salary
+Schema:
+Employees(EmployeeID, DepartmentID, Salary)
+
+3) List the Top N Products by Sales for Each Year
+Schema:
+Sales(SaleID, ProductID, SaleDate, Amount)
+
+4) Identify Products with Sales Increasing for Three Consecutive Months Schema :
+Sales (ProductID, SaleDate, Quantity)
+
+5) Find Products With the Largest Difference Between Highest and Lowest Monthly Sales
+Schema: 
+Sales (ProductID, SaleDate, Quantity)
