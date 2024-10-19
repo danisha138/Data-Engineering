@@ -1,0 +1,19 @@
+1. What is the difference between `groupByKey` and `reduceByKey` in PySpark? When should each be used?
+
+2. How do you handle data partitioning in PySpark for performance optimization?
+
+3. What are the key differences between `cache()` and `persist()` in Spark? Provide examples.
+
+4. Explain how to remove duplicates from a DataFrame in PySpark. What are some efficient ways to handle large datasets?
+
+5. How does PySpark handle schema evolution when working with data formats like Parquet or Avro?
+
+6. Describe the role of `SparkContext` and `SparkSession` in PySpark. What are their key differences?
+
+7. What are the best practices for writing optimized PySpark code when working with large-scale data?
+
+8. What is the difference between `map()` and `flatMap()` transformations in PySpark? Provide sample code.
+
+9. How do you implement window functions like `rank()`, `dense_rank()`, and `row_number()` in PySpark?
+
+10. Describe the process of integrating AWS S3 with PySpark to read and write data.
