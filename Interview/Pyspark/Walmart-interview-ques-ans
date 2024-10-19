@@ -1,0 +1,32 @@
+1, What is predicative pushdown and how it is working in pyspark?
+2, What is speculative execution in pyspark?
+3, What is partition pruning in pyspark?
+4, How to overcome driver OOM(Out Of Memory) in spark?
+
+𝟏, 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐏𝐫𝐞𝐝𝐢𝐜𝐚𝐭𝐞 𝐏𝐮𝐬𝐡𝐝𝐨𝐰𝐧 𝐚𝐧𝐝 𝐇𝐨𝐰 𝐃𝐨𝐞𝐬 𝐈𝐭 𝐖𝐨𝐫𝐤 𝐢𝐧 𝐏𝐲𝐒𝐩𝐚𝐫𝐤?
+Predicate Pushdown is an optimization technique used to enhance query performance by filtering data at the source rather than after it has been loaded into memory. 
+𝐇𝐨𝐰 𝐢𝐭 𝐖𝐨𝐫𝐤𝐬 𝐢𝐧 𝐏𝐲𝐒𝐩𝐚𝐫𝐤:
+😍 When a filter operation (e.g., df.filter(...)) is executed, Spark analyzes the query to determine if it can push the filter conditions down to the data source.
+😍 If the data source supports predicate pushdown (e.g., Parquet, ORC), Spark modifies the query to filter data during the read operation.
+
+𝟐, 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐬𝐩𝐞𝐜𝐮𝐥𝐚𝐭𝐢𝐯𝐞 𝐞𝐱𝐞𝐜𝐮𝐭𝐢𝐨𝐧 𝐢𝐧 𝐩𝐲𝐬𝐩𝐚𝐫𝐤?
+Speculative Execution is a feature designed to address the problem of straggler tasks—tasks that lag significantly behind others during execution. It helps ensure that long-running tasks do not slow down the overall job.
+𝐇𝐨𝐰 𝐢𝐭 𝐖𝐨𝐫𝐤𝐬:
+😍 Spark monitors task progress. If a task is running slower than its peers, it can launch a duplicate instance of that task on a different node.
+😍 Both the original and speculative tasks run concurrently, and once one of them finishes, the other is canceled.
+😍 This parallel execution can reduce overall job completion time.
+
+𝟑. 𝐖𝐡𝐚𝐭 𝐢𝐬 𝐏𝐚𝐫𝐭𝐢𝐭𝐢𝐨𝐧 𝐏𝐫𝐮𝐧𝐢𝐧𝐠 𝐢𝐧 𝐏𝐲𝐒𝐩𝐚𝐫𝐤?
+Partition Pruning is an optimization strategy that minimizes the amount of data read from disk by excluding unnecessary partitions based on filter criteria applied in queries.
+𝐇𝐨𝐰 𝐢𝐭 𝐖𝐨𝐫𝐤𝐬:
+😍 When loading partitioned data (e.g., partitioned by date or category) and applying filters referencing the partition columns (e.g., df.filter(df["date"] == '2024-01-01')), Spark can skip scanning partitions that do not meet the filter conditions.
+😍 This technique is particularly effective for large datasets, leading to reduced I/O and faster query responses.
+
+𝟒. 𝐇𝐨𝐰 𝐭𝐨 𝐎𝐯𝐞𝐫𝐜𝐨𝐦𝐞 𝐃𝐫𝐢𝐯𝐞𝐫 𝐎𝐮𝐭 𝐎𝐟 𝐌𝐞𝐦𝐨𝐫𝐲 (𝐎𝐎𝐌) 𝐢𝐧 𝐒𝐩𝐚𝐫𝐤?
+Driver Out Of Memory (OOM) errors occur when the Spark driver exceeds its memory allocation,
+𝐈𝐧𝐜𝐫𝐞𝐚𝐬𝐞 𝐃𝐫𝐢𝐯𝐞𝐫 𝐌𝐞𝐦𝐨𝐫𝐲:
+😍 Adjust the driver memory using the --driver-memory flag (e.g., spark.driver.memory=4g) to allocate more memory.
+𝐎𝐩𝐭𝐢𝐦𝐢𝐳𝐞 𝐃𝐚𝐭𝐚 𝐒𝐞𝐫𝐢𝐚𝐥𝐢𝐳𝐚𝐭𝐢𝐨𝐧:
+😍 Use Kryo serialization for better performance by setting spark.serializer to org.apache.spark.serializer.KryoSerializer.
+𝐁𝐫𝐨𝐚𝐝𝐜𝐚𝐬𝐭 𝐕𝐚𝐫𝐢𝐚𝐛𝐥𝐞𝐬:
+😍 For large datasets or lookup tables, use broadcast variables to reduce memory consumption
