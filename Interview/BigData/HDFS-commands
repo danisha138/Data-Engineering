@@ -1,0 +1,63 @@
+👉 Listing files and Directories 
+
+🔹 List Files: hadoop fs -ls /path 
+🔹 List Recursively: hadoop fs -ls -R /path
+🔹Sort by time: hadoop fs -ls -t /path
+🔹Search by Pattern: hadoop fs -ls / | grep *pattern*
+
+👉 Creating a New Directory
+
+🔹Create Directory: hadoop fs -mkdir /user/hadoop/dir
+🔹Create Directory Hierarchy: hadoop fs -mkdir -p /user/hadoop/dir1/dir2
+
+👉 Removing Files or Directories
+
+🔹Remove File: hadoop fs -rm /user/hadoop/file
+🔹Remove Directory: hadoop fs -rm -R /user/hadoop/dir
+
+👉 Copying Files
+
+🔹From Local to HDFS: hadoop fs -put /local/file /hdfs/dir
+🔹From HDFS to Local: hadoop fs -get /hdfs/file /local/dir
+
+👉 File Permissions
+
+🔹 Change file permissions: hadoop fs -chmod 755 /file_path 
+🔹 Change owner: hadoop fs -chown user:group /file_path
+
+👉 Viewing File Contents
+
+🔹View Last 10 Lines: hadoop fs -tail /hdfs/file
+🔹View First 10 Lines: hadoop fs -head /hdfs/file
+
+👉 Managing Files in HDFS
+
+🔹Copy Files: hadoop fs -cp /hdfs/file /new/hdfs/dir
+🔹Move/Rename Files: hadoop fs -mv /hdfs/file /new/hdfs/dir
+
+👉 Check Disk Space
+
+🔹Free Disk Space: hadoop fs -df -h /path
+🔹Disk Usage: hadoop fs -du -h /path
+
+👉 Replication Factor
+
+🔹Set File Replication: hadoop fs -setrep -w 2 /file
+🔹Set Directory Replication: hadoop fs -setrep -R -w 2 /dir
+
+👉 Compression
+🔹Read Compressed File: hadoop fs -text /file.gz
+
+👉 List Snapshots
+🔹List All Snapshots: hdfs dfs -lsSnap /path
+
+👉 Trash Operations
+🔹Empty Trash: hadoop fs -expunge
+
+👉 Snapshot Management
+
+🔹Create Snapshot: hdfs dfs -createSnapshot /dir
+🔹Delete Snapshot: hdfs dfs -deleteSnapshot /dir snapshot_name
+
+👉 Find Files Larger than X Size
+🔹Find Files Over 100MB: hadoop fs -find / -size +100M
