@@ -1,0 +1,49 @@
+
+1. Azure Data Factory (ADF)
+- What is Azure Data Factory, and how does it work?
+- Explain the concept of linked services, datasets, and pipelines in ADF.
+- How do you schedule pipelines in ADF?
+- Describe the different types of triggers in Azure Data Factory.
+- How would you handle failure scenarios in ADF pipelines?
+- What are integration runtimes in ADF, and what types are available?
+- How can you monitor and debug ADF pipelines?
+
+2. Azure Data Lake Storage (ADLS)
+- What is Azure Data Lake Storage, and how does it differ from Blob storage?
+- How do you manage access control and security in ADLS?
+- Explain the lifecycle management of data in ADLS.
+- How would you optimize data partitioning in ADLS for performance?
+
+3. Databricks (Apache Spark)
+- What is Azure Databricks, and how is it different from regular Apache Spark?
+- How do you create a cluster in Azure Databricks?
+- How would you handle large-scale data processing in Databricks using PySpark?
+- Explain how you would optimize a Spark job for better performance.
+- How do you integrate Databricks with Azure Data Lake and ADF?
+
+4. Data Modeling and ETL
+- Can you explain the ETL process and how it’s implemented in Azure?
+- What are some best practices for building efficient ETL pipelines?
+- How would you handle incremental data load?
+- How would you create and manage slowly changing dimensions in Azure Data Factory?
+
+5. SQL and Database Concepts
+- What is the difference between SQL Data Warehouse and Azure Synapse Analytics?
+- How do you manage performance tuning in Azure SQL Database?
+- What are partitioning and sharding in databases, and when would you use them?
+- How do you ensure data integrity and consistency in a distributed database system?
+
+7. Security and Compliance
+- How do you implement data security in Azure Data Lake and Azure SQL?
+- What are Managed Identities in Azure, and how do they work?
+- How do you use Azure Key Vault in a data pipeline?
+- What are your strategies for data encryption at rest and in transit in Azure?
+
+8. Automation and CI/CD
+- How do you implement CI/CD for Azure Data Factory pipelines?
+- Can you explain how to automate the deployment of ADF pipelines using Azure DevOps?
+- What tools do you use to monitor and automate data workflows?
+
+9. Real-Time Data Processing
+- How would you set up real-time data streaming in Azure (e.g., using Azure Stream Analytics or Event Hub)?
+- Explain how you would build a near-real-time data pipeline using Azure components.
