@@ -1,0 +1,29 @@
+📌ROUND 1: Big Data Fundamentals, SQL, and Coding
+This round began with introductions and a deep dive into my project experience, focusing on the technologies I used. Then, the following questions were asked:
+
+1. ⁠Write an SQL query to identify customers who have made multiple purchases in the same day.
+2. ⁠How would you perform an efficient join on very large datasets in a distributed environment?
+3. ⁠What are the performance implications of using CROSS JOIN on massive datasets?
+4. ⁠How would you handle processing of a 100GB CSV file without running into memory issues in Python?
+5. ⁠Explain the difference between re partitioning and coalescing in Spark. When would you use each?
+
+
+📌ROUND 2: Advanced Big Data and Real-time Data Processing
+
+This round dug deeper into my experience with big data technologies, focusing on real-time processing. Questions included:
+
+1. ⁠How do you ensure data consistency and fault tolerance in a distributed data pipeline?
+2. ⁠What approaches would you take to troubleshoot and optimize a slow-running ETL pipeline?
+3. ⁠What is your experience with cloud technologies like AWS or GCP? What services did you use and why?
+4. ⁠Describe your experience using Apache Kafka or similar real-time streaming platforms.
+5. ⁠What is your experience with schema evolution in a distributed data store like HBase or Cassandra?
+7. ⁠Explain how Spark Streaming works. How do you handle windowed aggregations and fault-tolerance?
+
+
+📌ROUND 3: System Design & Data Architecture
+
+It is a system design Round
+
+1. ⁠Design a data architecture to track real-time ride locations for Uber's global fleet. How would you ensure scalability and low latency?
+2. ⁠What factors would you consider when designing a fault-tolerant and highly available data lake for Uber's analytics team?
+3. ⁠How would you design a recommendation system that can suggest destinations for Uber riders based on previous trips?
