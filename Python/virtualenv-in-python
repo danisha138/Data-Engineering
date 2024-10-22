@@ -1,0 +1,19 @@
+python -m venv virtual_env
+ 
+source virtual_env/bin/activate
+
+pip list
+pip freeze > requirement.txt
+pip install -r requirement.txt
+
+deactivate
+
+rm -rf virtual_env
+
+##create a virtual env with global packages
+python -m venv virtual_env --system-site-packages
+
+
+pip list --local
+pip freeze --local
+
