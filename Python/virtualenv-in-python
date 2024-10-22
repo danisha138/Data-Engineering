@@ -17,3 +17,37 @@ python -m venv virtual_env --system-site-packages
 pip list --local
 pip freeze --local
 
+############################ ON WINDOWS###################################
+
+
+python -m venv project_env 
+project_env\Scripts\activate.bat
+where python 
+pip install requests 
+pip install pytz 
+pip list 
+pip freeze 
+
+deactivate 
+rmdir project_env /s 
+
+python -m venv venv --system-site-packages 
+
+pip list --local
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
