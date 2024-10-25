@@ -1,0 +1,76 @@
+🔥 Top 25 PySpark Commands for Data Transformations 🔥
+
+1. filter() – Filters rows based on a condition (like SQL’s WHERE).
+ Example: df.filter(df.age > 30)
+ 
+2. select() – Selects specific columns from a DataFrame.
+ Example: df.select("name", "age")
+
+3. groupBy() – Groups data based on one or more columns.
+ Example: df.groupBy("department")
+
+4. agg() – Performs aggregation on grouped data (like SUM, AVG).
+ Example: df.groupBy("department").agg({"salary": "avg"})
+
+5. join() – Joins two DataFrames based on a common column.
+ Example: df1.join(df2, df1.id == df2.id)
+
+6. orderBy() – Sorts the data by specific columns.
+ Example: df.orderBy("salary", ascending=False)
+
+7. withColumn() – Adds or modifies a column in the DataFrame.
+ Example: df.withColumn("salary_increase", df.salary * 1.10)
+
+8. dropDuplicates() – Removes duplicate rows from a DataFrame.
+ Example: df.dropDuplicates()
+
+9. distinct() – Returns distinct rows in a DataFrame.
+ Example: df.distinct()
+
+10. limit() – Limits the number of rows returned.
+ Example: df.limit(100)
+
+11. union() – Combines two DataFrames with the same structure.
+ Example: df1.union(df2)
+
+12. drop() – Removes a column from the DataFrame.
+ Example: df.drop("unnecessary_column")
+
+13. isNull() / isNotNull() – Checks for NULL values in a column.
+ Example: df.filter(df.age.isNotNull())
+
+14. count() – Counts the number of rows in a DataFrame.
+ Example: df.count()
+
+15. show() – Displays the first few rows of the DataFrame.
+ Example: df.show(5)
+
+16. sample() – Randomly samples a fraction of rows from the DataFrame.
+ Example: df.sample(withReplacement=False, fraction=0.1)
+
+17. na.fill() – Fills NULL values with specified values.
+ Example: df.na.fill({"age": 0, "name": "unknown"})
+
+18. na.drop() – Drops rows with NULL values.
+ Example: df.na.drop()
+
+19. alias() – Renames a column in the DataFrame.
+ Example: df.select(df.name.alias("employee_name"))
+
+20. collect() – Returns all the rows as a list (used sparingly for small datasets).
+ Example: df.collect()
+
+21. explode() – Flattens an array or map column into separate rows.
+ Example: df.withColumn("exploded", explode(df.array_column))
+
+22. repartition() – Increases or decreases the number of partitions for a DataFrame.
+ Example: df.repartition(5)
+
+23. coalesce() – Reduces the number of partitions in a DataFrame (more efficient than repartition).
+ Example: df.coalesce(2)
+
+24. pivot() – Pivot rows into columns, useful for data summarization.
+ Example: df.groupBy("department").pivot("job_role").sum("salary")
+
+25. describe() – Provides summary statistics for numerical columns.
+ Example: df.describe("salary").show()
