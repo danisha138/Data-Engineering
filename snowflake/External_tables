@@ -11,5 +11,4 @@ External Tables
 • External tables are read-only since they point to external storage. 。 DML operations cannot be performed on them.
 
 • External table data does not contribute to Snowflake storage costs
-
-the compute cost is charged when queries are executed
+  the compute cost is charged when queries are executed
