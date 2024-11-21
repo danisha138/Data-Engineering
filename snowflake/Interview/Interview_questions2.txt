@@ -31,9 +31,9 @@ So if the date is 2022-11-30', it will be shown as '2022-01-01' because of the m
 select date_trunc("year", current_date);
 
 select current timestamp ;
-select date_trune year, current_timestamp); 
-select date_franc month, current_timestamp);
-select date trane day, current timestamp):
+select date_trunc( year, current_timestamp); 
+select date_trunc( month, current_timestamp);
+select date_trunc( day, current timestamp):
 
 Q3: One of your query is taking long time to run, how can you handle in that situation?
 There can be lot of reasons for this, we can resolve with below steps.
