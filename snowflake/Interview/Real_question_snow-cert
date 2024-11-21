@@ -1,0 +1,26 @@
+1.what is common between standard warehouse and snowpark optimized warehouse.
+2. Snowpark-optimized warehouses---> Workloads that have large memory requirements such as ML training use cases
+3. ORGANIZATION ACCOUNTS HISTORY--> list of dropped accounts that have not yet been deleted
+4. SPLIT_PART --> If the partNumber is out of range, the returned value is an empty string. 
+5.SPLIT_TO_TABLE
+6.We can apply a network policy to an account, a security integration, or a user
+7.Network policy precedence( 1 question)
+8.MONITOR privilege on the warehouse --> Monitoring warehouse load 
+9.Access control framework  --> Each object has an owner, who can in turn grant access to that object(DAC)
+10. Types of URLs available to access files(2-3 questions)
+db,schema and stagename and file URL -->BUILD_STAGE_FILE_URL
+Expiration of Pre-signed URL
+
+11.Querying Semi-structured Data[column name is case-insensitive but element names are case-sensitive]
+    src:salesperson.name
+    SRC:salesperson.name
+	
+12. The public key is assigned to the Snowflake user who uses the Snowflake client to connect and authenticate to Snowflake.
+      ALTER USER example_user SET RSA_PUBLIC_KEY='MIIBIjANBgkqh...';
+	  ALTER USER example_user UNSET RSA_PUBLIC_KEY;
+
+12. SELECT PARSE_JSON(NULL) ;-- valid SQL null
+13.Stored Procedure--> perform DDL or DML database operations
+14. FLATTEN can be used to convert semi-structured data to a relational representation.
+15. OBJECT_CONSTRUCT-->Generating a JSON Dataset using Relational Data in Snowflake
+
