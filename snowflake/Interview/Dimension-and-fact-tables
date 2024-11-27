@@ -1,0 +1,22 @@
+Dimension Table:
+
+Definition:
+A dimension table is a table in a database that stores descriptive attributes, often text values, 
+that provide context to the data in a fact table.
+
+Example:
+Consider a sales database. The dimension table could be "Product" with columns like
+ProductID, ProductName, Category, and Supplier. Each row represents a unique product and its details.
+
+
+
+
+Fact Table:
+
+Definition:
+A fact table is a table in a database that stores quantitative data (facts) about a business process,
+usually numeric values such as sales revenue, quantity sold, or profit.
+
+Example:
+In the same sales database, the fact table could be "Sales" with columns like OrderID, ProductID, CustomerID, Date, and SalesAmount. 
+Each row represents a specific sale and its quantitative details.
