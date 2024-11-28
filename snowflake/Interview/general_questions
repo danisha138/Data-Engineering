@@ -60,3 +60,14 @@ Some other frequently asked sql questions.
 34.) Do we use variables in views?
 35.) What are the limitations of views?
 
+
+
+
+**Primary Key:
+A primary key is a logical concept - it's the unique identifier for a row in a table. 
+As such, it has a bunch of attributes - it may not be null, and it must be unique.
+
+**Clustered index:
+A clustered index is a physical concept - it's an index that affects the order in which records are stored on disk. 
+This makes it a very fast index when accessing data, though it may slow down writes if your primary key is not a sequential number.
+
