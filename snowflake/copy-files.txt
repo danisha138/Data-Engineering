@@ -1,0 +1,45 @@
+Copy Files-
+
+COPY FILES INTO @[<namespace>.]<stage_name>[/<path>/]
+  FROM @[<namespace>.]<stage_name>[/<path>/]
+  [ FILES = ( '<file_name>' [ , '<file_name>' ] [ , ... ] ) ]
+  [ PATTERN = '<regex_pattern>' ]
+  [ DETAILED_OUTPUT = { TRUE | FALSE } ]
+
+You can specify a maximum of 1000 file names.
+
+The USAGE privilege on the parent database and schema are required to perform operations on any object in a schema.
+
++---------------------------------------+------+----------------------------------+--------+
+|  privilege    | Object                |   Notes                                          |
+|---------------------------------------+------+----------------------------------+--------|
+| USAGE         | External stage        |   Required on a source or target external stage. |
+| READ          | Internal named stage  |   Required on a source internal stage.           |
+| WRITE         | Internal named stage  |   Required on a target internal stage.           |
++---------------------------------------+------+----------------------------------+--------+
+
+
+**Usage notes
+This command does not support the following:
+1.Copying files from or to user or table stages.
+
+2.Copying files that are larger than 5GB.
+
+
+**Considerations for running this command:
+
+COPY FILES statements overwrite any existing files with matching names in the target location. 
+The command does not remove any existing files that don’t match the names of the copied files.
+
+If a file copy operation fails, Snowflake does not perform any automatic cleanup.
+
+
+**The COPY FILES command incurs data transfer and compute costs:
+
+Data transfer: Snowflake charges a per-byte fee when you copy files from an internal Snowflake stage
+into an external stage in a different region or with a different cloud provider.
+Snowflake does not charge for data ingress (for example, when copying files from an external stage into an internal stage).
+
+
+Compute: COPY FILES is a serverless feature and doesn’t require a virtual warehouse.
+The line item for the COPY FILES command on your Snowflake bill does not include any cloud services charges.
