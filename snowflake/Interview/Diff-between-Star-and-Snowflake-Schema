@@ -1,0 +1,41 @@
+
+Star and snowflake schemas are database structural designs used in data warehousing.
+
+A star schema has a central fact table connected to dimension tables, directly linking attributes to facts, simplifying queries and enhancing performance.
+
+The snowflake schema, a variation of the star, further normalizes dimension tables into sub-dimension tables, reducing data redundancy but increasing complexity.
+
+Star schemas are preferred for their simplicity and query efficiency, while snowflake schemas are chosen for their data integrity and storage efficiency.
+
+
+Star Schema:
+
+Advantages:
+
+- Simplicity: The design is easy to understand and implement.
+
+- Performance: Queries are faster due to fewer joins.
+
+
+Disadvantages:
+
+Data Redundancy: Since it is not normalized, data may be duplicated multiple times.
+
+Maintenance Challenges: Updating and synchronizing data becomes more complicated.
+
+-------------------------------------
+
+Snowflake Schema:
+
+Advantages:
+
+Normalization: Reduces data redundancy, making maintenance and updates easier.
+
+Data Integrity: Data is better organized, ensuring integrity.
+
+
+Disadvantages:
+
+- Complexity: The design is more complex, making it harder to understand and implement.
+
+- Performance: Queries are slower as more joins are required to retrieve complete data.
