@@ -7,7 +7,7 @@ The snowflake schema, a variation of the star, further normalizes dimension tabl
 
 Star schemas are preferred for their simplicity and query efficiency, while snowflake schemas are chosen for their data integrity and storage efficiency.
 
-
+---------------------------------
 Star Schema:
 
 Advantages:
