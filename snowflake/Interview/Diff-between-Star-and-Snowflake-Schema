@@ -1,5 +1,4 @@
-
-Star and snowflake schemas are database structural designs used in data warehousing.
+Star Schema and Snowflake Schema are data warehouse design approaches.
 
 A star schema has a central fact table connected to dimension tables, directly linking attributes to facts, simplifying queries and enhancing performance.
 
