@@ -38,3 +38,8 @@ Disadvantages:
 - Complexity: The design is more complex, making it harder to understand and implement.
 
 - Performance: Queries are slower as more joins are required to retrieve complete data.
+
+
+
+
+****Data redundancy occurs when the same piece of data is stored in two or more separate places
