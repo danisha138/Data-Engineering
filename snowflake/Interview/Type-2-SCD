@@ -1,0 +1,10 @@
+Slowly Changing Dimension Type 2:
+
+SCDs are a common database modeling technique used to capture data in a table and show how it changes over time.
+Although SCDs are most commonly associated with dimensions.
+
+SCD Type 2 is used to capture and manage both current and historical data changes effectively. Instead of updating existing records,
+it creates new rows for each change in dimension attributes, maintaining multiple versions of records in the table 
+where each version can be identified by a unique key and an effective date range.
+
+It also enables accurate reporting and analysis of historical data while ensuring data warehouse integrity.
