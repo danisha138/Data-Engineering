@@ -1,0 +1,10 @@
+Change Data Capture (CDC) quickly identifies and processes only data that has changed and
+then makes this changed data available for further use. 
+
+A Slowly Changing Dimension (SCD) is a dimension that stores and manages
+both current and historical data over time in a data warehouse.
+
+
+SCD is like keeping a historical record of the data, while CDC is like getting real-time
+updates on any changes made to that data. Together, these two concepts help ensure 
+that the data is correct and up-to-date so that the team can make decisions based on accurate information
